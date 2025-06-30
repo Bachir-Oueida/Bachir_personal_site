@@ -97,7 +97,7 @@ export default function Banner() {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Find Your Dream Home</h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl">Discover the perfect property that matches your lifestyle and preferences</p>
+        <p className="text-xl md:text-2xl mb-8 max-w-2xl">Discover the perfect property that matches your lifestyle</p>
         <div className="flex flex-col sm:flex-row gap-4">
           {/* <button className="bg-red-600 text-white hover:bg-red-700 px-8 py-3 rounded-full font-medium text-lg transition-colors">
             Browse Properties

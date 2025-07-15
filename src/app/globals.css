@@ -1,4 +1,7 @@
+
 @import "tailwindcss";
+
+
 
 :root {
   --background: #ffffff;
@@ -12,15 +15,73 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1{
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+h2{
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+h4{
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+h5{
+  font-size: 1rem;
+  font-weight: 600;
+}
+p{
+  font-size: 1rem;
+}
+
+
+.global-btn{
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  &:hover{
+    background-color: #000;
+    color: #fff;
+    text-decoration: none !important;
+  }
+}
+
+.global-btn-white{
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  &:hover{
+    background-color: #fff;
+    color: #000;
+    text-decoration: none !important;
+  }
 }

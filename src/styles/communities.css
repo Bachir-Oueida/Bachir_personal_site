@@ -1,0 +1,87 @@
+.communities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.community-item {
+    position: relative;
+    height: 300px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+}
+
+.community-item:hover {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.community-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(100%);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    /* border: 2px solid transparent; */
+}
+
+.community-item:hover {
+    overflow: hidden;
+}
+
+.community-item:hover .overlay {
+    opacity: 0.6;
+    border-color: white;
+}
+
+.community-item:hover .text-content {
+    border: 1px solid white;
+    transition: all 0.4s ease;
+}
+
+.community-item:hover .community-image {
+    transform: scale(1.05);
+    transition: transform 0.8s ease;
+}
+
+
+.text-content {
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+    padding: 70px 10px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    /* margin: 0 auto; */
+}
+
+.text-content p {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.text-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.community-item:hover .text-content p {
+    opacity: 1;
+}

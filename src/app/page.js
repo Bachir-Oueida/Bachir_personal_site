@@ -1,5 +1,4 @@
 import Image from "next/image";
-<<<<<<< Updated upstream
 
 export default function Home() {
   return (
@@ -99,7 +98,6 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-=======
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Intro from "../components/Intro";
@@ -120,7 +118,6 @@ export default function Home() {
       <TextVideo />
       <FeaturedArticle />
       <HighRiseSlider />
->>>>>>> Stashed changes
     </div>
   );
 }

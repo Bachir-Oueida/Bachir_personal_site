@@ -23,10 +23,10 @@ export default function TextVideo() {
           </div>
           <p className="text-video-description">
             The Century, a 42-story masterpiece designed by world-renowned Robert A.M. Stern Architects, provides a new reality from 
-            its perch atop the tallest building in Western Los Angeles. Soaring above Century City's premier locale, the tower offers 
-            sweeping vistas of downtown Los Angeles across the Santa Monica Mountains to the Pacific Ocean. The Century's living. 
-            Chef Concierge is an exclusive member of the internationally renowned Les Clefs d'Or Organization. The building residents 
-            and business expressed timeless West Coast elegance and contemporary international refinement. The Century's Penthouse 
+            its perch atop the tallest building in Western Los Angeles. Soaring above Century City&apos;s premier locale, the tower offers 
+            sweeping vistas of downtown Los Angeles across the Santa Monica Mountains to the Pacific Ocean. The Century&apos;s living. 
+            Chef Concierge is an exclusive member of the internationally renowned Les Clefs d&apos;Or Organization. The building residents 
+            and business expressed timeless West Coast elegance and contemporary international refinement. The Century&apos;s Penthouse 
             Collection Interior architecture, curated by interior design luminary Rose Tarlow, captures the refined aesthetic of 
             Century has been grounded in timeless excellence by the U.S. Green Building Council.
           </p>

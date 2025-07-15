@@ -13,7 +13,7 @@ export default function FeaturedArticle() {
         />
         <div className="featured-article-overlay"></div>
         <div className="featured-article-content text-center">
-          <h2>BACHIR OUEIDA'S $20M IS CENTURY CITY’S PRICIEST SALE</h2>
+          <h2>BACHIR OUEIDA&apos;S $20M IS CENTURY CITY&apos;S PRICIEST SALE</h2>
           <a href="#" className="global-btn-white">Read More</a>
         </div>
       </div>

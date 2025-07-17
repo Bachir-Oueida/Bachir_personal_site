@@ -23,7 +23,7 @@ export default function Intro() {
             </h1>
             <h2 
                 ref={subtitleRef}
-                className={`intro-subtitle fade-in-up stagger-delay-2 ${subtitleVisible ? 'animate' : ''}`}
+                className={`intro-subtitle f-italic fade-in-up stagger-delay-2 ${subtitleVisible ? 'animate' : ''}`}
             >
                 Top Beverly Hills Luxury Real Estate Agent
             </h2>

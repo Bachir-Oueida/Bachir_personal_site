@@ -12,7 +12,7 @@ export default function Newsletter() {
     return (
         <section ref={sectionRef} className="newsletter-section">
             <div className="newsletter-overlay"></div>
-            <div className={`newsletter-container ${sectionVisible ? 'animate' : ''}`}>
+            <div className={`newsletter-container fade-in ${sectionVisible ? 'animate' : ''}`}>
                 <div className="newsletter-content">
                     <h1 
                         ref={titleRef}

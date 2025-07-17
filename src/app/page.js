@@ -6,6 +6,7 @@ import Communities from "../components/Communities";
 import TextSlider from "../components/TextSlider";
 import FeaturedArticle from "../components/FeaturedArticle";
 import TextVideo from "../components/textVideo";
+import FeaturedBlogs from "../components/FeaturedBlogs";
 import HighRiseSlider from "../components/HighRiseSlider";
 import Work from "../components/Work";
 import Newsletter from "../components/Newsletter";
@@ -20,6 +21,7 @@ export default function Home() {
       <TextSlider />
       <TextVideo />
       <FeaturedArticle />
+      <FeaturedBlogs />
       <HighRiseSlider />
       <Work />
       <Newsletter />

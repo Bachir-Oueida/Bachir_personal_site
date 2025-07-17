@@ -54,7 +54,7 @@ export default function HighRiseSlider() {
             </div>
             <div className="slide-text">
               <h2 className="text-black">The Avery</h2>
-              <h5 className="text-black">
+              <h5 className="text-black f-italic">
                 Located in San Francisco in close proximity to the offices of
                 some of the biggest companies in the world.
               </h5>
@@ -78,7 +78,7 @@ export default function HighRiseSlider() {
             </div>
             <div className="slide-text">
               <h2 className="text-black">Royal Atlantis</h2>
-              <h5 className="text-black">Exclusive beach homes in Dubai</h5>
+              <h5 className="text-black f-italic">Exclusive beach homes in Dubai</h5>
               <p className="text-black text-justify pr-10">
                 Introducing the most exclusive beach homes and apartments Dubai
                 has to offer. Each home includes the height of interior design,

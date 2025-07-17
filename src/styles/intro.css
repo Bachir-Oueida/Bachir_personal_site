@@ -10,31 +10,46 @@
 }
 
 .intro-title {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
     text-align: center;
-    margin-bottom: 1rem;
-    color: black;
+}
+
+.intro-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #333, transparent);
 }
 
 .intro-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     text-align: center;
     margin-bottom: 2rem;
     color: black;
+    margin-top: 30px;
+    text-transform: none;
 }
 
 .intro-text {
     text-align: center;
     color: #4a4a4a;
     margin-bottom: 1rem;
-    color: black;
+    line-height: 1.6;
 }
 
 .intro-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    text-align: center;
+    margin-top: 2rem;
 }
 
 .intro-button:hover {

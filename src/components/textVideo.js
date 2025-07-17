@@ -5,6 +5,7 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function TextVideo() {
   const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
   const [videoRef, videoVisible] = useScrollAnimation({ threshold: 0.3 });
   const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.3 });
 
@@ -13,6 +14,13 @@ export default function TextVideo() {
       ref={sectionRef}
       className={`text-video-section fade-in ${sectionVisible ? 'animate' : ''}`}
     >
+      <div 
+        ref={titleRef}
+        className={`text-video-header slide-in-down ${titleVisible ? 'animate' : ''}`}
+      >
+        <h2>The Century</h2>
+      </div>
+      
       <div className="text-video-container">
         <div 
           ref={videoRef}
@@ -34,17 +42,16 @@ export default function TextVideo() {
           ref={contentRef}
           className={`text-video-content slide-in-right ${contentVisible ? 'animate' : ''}`}
         >
-          <div className="text-video-badge">
+          {/* <div className="text-video-badge">
             THE CENTURY
-          </div>
+          </div> */}
           <p className="text-video-description">
             The Century, a 42-story masterpiece designed by world-renowned Robert A.M. Stern Architects, provides a new reality from 
             its perch atop the tallest building in Western Los Angeles. Soaring above Century City&apos;s premier locale, the tower offers 
             sweeping vistas of downtown Los Angeles across the Santa Monica Mountains to the Pacific Ocean. The Century&apos;s living. 
             Chef Concierge is an exclusive member of the internationally renowned Les Clefs d&apos;Or Organization. The building residents 
             and business expressed timeless West Coast elegance and contemporary international refinement. The Century&apos;s Penthouse 
-            Collection Interior architecture, curated by interior design luminary Rose Tarlow, captures the refined aesthetic of 
-            Century has been grounded in timeless excellence by the U.S. Green Building Council.
+            residences feature open floor plan design and private outdoor space.
           </p>
         </div>
       </div>

@@ -87,7 +87,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         {/* Desktop Layout */}
         <div className="hidden md:flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-white hover:text-gray-200 transition-colors">
+          <Link href="/" className={`text-3xl font-bold transition-colors ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}>
             BACHIR OUEIDA
           </Link>
           <nav>
@@ -98,7 +98,7 @@ export default function Header() {
                     <>
                       <button 
                         onClick={() => toggleDropdown(index)}
-                        className="flex items-center text-white hover:text-gray-200 transition-colors focus:outline-none"
+                        className={`flex items-center transition-colors focus:outline-none ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
                       >
                         {item.name}
                         <svg 
@@ -111,12 +111,12 @@ export default function Header() {
                         </svg>
                       </button>
                       {activeDropdown === index && (
-                        <ul className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                        <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg py-1 z-50">
                           {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
                             <li key={dropdownIndex}>
                               <Link 
                                 href={dropdownItem.path}
-                                className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white transition-colors"
+                                className="block px-4 py-2 text-gray-800 hover:bg-black hover:text-white transition-colors"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {dropdownItem.name}
@@ -129,7 +129,7 @@ export default function Header() {
                   ) : (
                     <Link 
                       href={item.path} 
-                      className="text-white hover:text-gray-200 transition-colors"
+                      className={`transition-colors ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
                     >
                       {item.name}
                     </Link>
@@ -145,7 +145,7 @@ export default function Header() {
           {/* Hamburger Menu Button */}
           <button 
             onClick={toggleMobileMenu}
-            className="text-white hover:text-gray-200 focus:outline-none"
+            className={`focus:outline-none transition-colors ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileMenuOpen ? (
@@ -157,7 +157,7 @@ export default function Header() {
           </button>
 
           {/* Centered Logo */}
-          <Link href="/" className="text-xl font-bold text-white hover:text-gray-200 transition-colors absolute left-1/2 transform -translate-x-1/2">
+          <Link href="/" className={`text-xl font-bold transition-colors absolute left-1/2 transform -translate-x-1/2 ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}>
             BACHIR OUEIDA
           </Link>
 
@@ -167,7 +167,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+          <div className="md:hidden mt-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg h-screen">
             <nav className="py-4">
               <ul className="space-y-2">
                 {navItems.map((item, index) => (

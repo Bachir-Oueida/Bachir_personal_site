@@ -40,6 +40,10 @@
     /* margin-bottom: 1rem; */
 }
 
+.slide-text h5{
+    text-transform: none;
+}
+
 .slide-text p {
     /* margin-bottom: 1rem; */
 }
@@ -80,4 +84,10 @@
 .slick-next:before {
     color: #000;
     font-size: 30px;
+}
+
+@media all and (max-width: 768px) {
+    .slide-content {
+        grid-template-columns: 1fr;
+    }
 }

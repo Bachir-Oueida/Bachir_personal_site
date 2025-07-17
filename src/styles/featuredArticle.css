@@ -50,3 +50,14 @@
     margin-top: 70px;
     display: inline-block;
 }
+
+@media all and (max-width: 768px) {
+  .featured-article-overlay{
+    height: 100%;
+    width: 100%;
+  }
+  .featured-article-content{
+    width: 80%;
+    padding: 0 10px;
+  }
+}

@@ -7,6 +7,8 @@ import TextSlider from "../components/TextSlider";
 import FeaturedArticle from "../components/FeaturedArticle";
 import TextVideo from "../components/textVideo";
 import HighRiseSlider from "../components/HighRiseSlider";
+import Work from "../components/Work";
+import Newsletter from "../components/Newsletter";
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       <TextVideo />
       <FeaturedArticle />
       <HighRiseSlider />
+      <Work />
+      <Newsletter />
     </div>
   );
 }

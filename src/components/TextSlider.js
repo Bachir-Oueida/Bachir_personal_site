@@ -8,11 +8,16 @@ import image1 from "../../public/images/slider1.jpg";
 import image2 from "../../public/images/slider2.jpg";
 import image3 from "../../public/images/slider3.jpeg";
 import Image from "next/image";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 // Dynamically import the Slider component
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function TextSlider() {
+  const [containerRef, containerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [sliderRef, sliderVisible] = useScrollAnimation({ threshold: 0.3 });
+
   const settings = {
     dots: false,
     infinite: true,
@@ -25,11 +30,21 @@ export default function TextSlider() {
   };
 
   return (
-    <div className="slider-container bg-black">
-        <div className="slider-title text-center">
+    <div 
+      ref={containerRef}
+      className={`slider-container bg-black fade-in ${containerVisible ? 'animate' : ''}`}
+    >
+        <div 
+          ref={titleRef}
+          className={`slider-title text-center slide-in-down ${titleVisible ? 'animate' : ''}`}
+        >
             <h2 className="text-white">Latest Properties</h2>
         </div>
-      <Slider {...settings} className="slider mt-10">
+      <div 
+        ref={sliderRef}
+        className={`slider mt-10 slide-in-up ${sliderVisible ? 'animate' : ''}`}
+      >
+        <Slider {...settings} className="slider">
         <div className="slide">
           <div className="slide-content">
             <div className="slide-image-container">
@@ -93,7 +108,8 @@ export default function TextSlider() {
           </div>
         </div>
         {/* Add more slides as needed */}
-      </Slider>
+        </Slider>
+      </div>
     </div>
   );
 }

@@ -1,10 +1,23 @@
+'use client';
+
 import "../styles/textVideo.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function TextVideo() {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [videoRef, videoVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.3 });
+
   return (
-    <div className="text-video-section">
+    <div 
+      ref={sectionRef}
+      className={`text-video-section fade-in ${sectionVisible ? 'animate' : ''}`}
+    >
       <div className="text-video-container">
-        <div className="text-video-video">
+        <div 
+          ref={videoRef}
+          className={`text-video-video slide-in-left ${videoVisible ? 'animate' : ''}`}
+        >
           <video 
             src="/videos/century-video.mp4" 
             controls 
@@ -17,7 +30,10 @@ export default function TextVideo() {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="text-video-content">
+        <div 
+          ref={contentRef}
+          className={`text-video-content slide-in-right ${contentVisible ? 'animate' : ''}`}
+        >
           <div className="text-video-badge">
             THE CENTURY
           </div>

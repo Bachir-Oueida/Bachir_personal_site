@@ -8,11 +8,21 @@ import image1 from "../../public/images/highrises1.jpg";
 import image2 from "../../public/images/highrises2.jpg";
 import image3 from "../../public/images/highrises3.jpg";
 import Image from "next/image";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 // Dynamically import the Slider component
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function HighRiseSlider() {
+  const [containerRef, containerVisible] = useScrollAnimation({ 
+    threshold: 0.1, 
+    rootMargin: '0px 0px -50px 0px' 
+  });
+  const [titleRef, titleVisible] = useScrollAnimation({ 
+    threshold: 0.2, 
+    rootMargin: '0px 0px -100px 0px' 
+  });
+
   const settings = {
     dots: true,
     infinite: true,
@@ -25,11 +35,18 @@ export default function HighRiseSlider() {
   };
 
   return (
-    <div className="high-rise-slider-container slider-container">
-      <div className="slider-title text-center">
+    <div 
+      ref={containerRef}
+      className={`high-rise-slider-container slider-container mb-20 fade-in ${containerVisible ? 'animate' : ''}`}
+    >
+      <div 
+        ref={titleRef}
+        className={`slider-title text-center slide-in-down ${titleVisible ? 'animate' : ''}`}
+      >
         <h2 className="text-black">High Rises</h2>
       </div>
-      <Slider {...settings} className="slider mt-10">
+      <div className="slider mt-10">
+        <Slider {...settings} className="slider">
         <div className="slide">
           <div className="slide-content">
             <div className="slide-image-container">
@@ -97,5 +114,6 @@ export default function HighRiseSlider() {
         {/* Add more slides as needed */}
       </Slider>
     </div>
+  </div>
   );
 }

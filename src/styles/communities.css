@@ -85,3 +85,9 @@
 .community-item:hover .text-content p {
     opacity: 1;
 }
+
+@media all and (max-width: 768px) {
+    .communities-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

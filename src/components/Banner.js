@@ -42,7 +42,7 @@ export default function Banner() {
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [bannerContent.length]);
 
   const currentContent = bannerContent[currentSlide];
 

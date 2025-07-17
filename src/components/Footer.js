@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "../styles/Footer.css";
 
 export default function Footer() {
@@ -23,10 +24,12 @@ export default function Footer() {
           {/* Second Column - Footer Image & Text */}
           <div className="footer-column">
             <div className="footer-image-section">
-              <img
+              <Image
                 src="/images/footerImage.png"
                 alt="Luxury Property"
                 className="footer-image"
+                width={400}
+                height={300}
               />
               <p className="footer-disclaimer text-center f-italic">
                 While some of the listings on this site may not be our exclusive

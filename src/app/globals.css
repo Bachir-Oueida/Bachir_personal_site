@@ -75,11 +75,12 @@ p{
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0 auto;
-  &:hover{
-    background-color: #000;
-    color: #fff;
-    text-decoration: none !important;
-  }
+}
+
+.global-btn:hover{
+  background-color: #000;
+  color: #fff;
+  text-decoration: none !important;
 }
 
 .global-btn-white{
@@ -91,11 +92,12 @@ p{
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0 auto;
-  &:hover{
-    background-color: #fff;
-    color: #000;
-    text-decoration: none !important;
-  }
+}
+
+.global-btn-white:hover{
+  background-color: #fff;
+  color: #000;
+  text-decoration: none !important;
 }
 
 .f-italic{

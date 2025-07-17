@@ -32,7 +32,7 @@ export default function Work() {
           >
             Years of experience and a stellar global reputation make Bachir
             Oueida one of the Top Beverly Hills Luxury Real Estate Agent.
-            Bachir's extensive knowledge and skill will provide you with the
+            Bachir&apos;s extensive knowledge and skill will provide you with the
             very best tools and knowledge to meet your real estate objectives.
             Client Satisfaction, integrity and professionalism are the number
             one priority.

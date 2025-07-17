@@ -34,7 +34,7 @@ export const useScrollAnimation = (options = {}) => {
         observer.unobserve(currentElement);
       }
     };
-  }, [options.threshold, options.rootMargin, hasAnimated]);
+  }, [options, hasAnimated]);
 
   return [elementRef, isVisible, hasAnimated];
 };

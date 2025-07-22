@@ -20,7 +20,7 @@ export default function FeaturedBlogs() {
   return (
     <section 
       ref={sectionRef}
-      className={`featured-blogs-section fade-in ${sectionVisible ? 'animate' : ''}`}
+      className="featured-blogs-section"
     >
       <div className="container">
         <div 

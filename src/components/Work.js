@@ -12,7 +12,7 @@ export default function Work() {
 
   return (
     <section ref={sectionRef} className="work-section">
-      <div className={`work-overlay scale-in ${sectionVisible ? 'animate' : ''}`}>
+      <div className="work-overlay">
         <div className="work-content">
           <h1 
             ref={titleRef}

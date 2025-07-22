@@ -37,7 +37,7 @@ export default function HighRiseSlider() {
   return (
     <div 
       ref={containerRef}
-      className={`high-rise-slider-container slider-container mb-20 fade-in ${containerVisible ? 'animate' : ''}`}
+      className="high-rise-slider-container slider-container mb-20"
     >
       <div 
         ref={titleRef}

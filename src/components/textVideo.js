@@ -12,7 +12,7 @@ export default function TextVideo() {
   return (
     <div 
       ref={sectionRef}
-      className={`text-video-section fade-in ${sectionVisible ? 'animate' : ''}`}
+      className="text-video-section"
     >
       <div 
         ref={titleRef}
@@ -24,7 +24,7 @@ export default function TextVideo() {
       <div className="text-video-container">
         <div 
           ref={videoRef}
-          className={`text-video-video slide-in-left ${videoVisible ? 'animate' : ''}`}
+          className={`text-video-video ${videoVisible ? 'animate' : ''}`}
         >
           <video 
             src="/videos/century-video.mp4" 
@@ -40,7 +40,7 @@ export default function TextVideo() {
         </div>
         <div 
           ref={contentRef}
-          className={`text-video-content slide-in-right ${contentVisible ? 'animate' : ''}`}
+          className={`text-video-content ${contentVisible ? 'animate' : ''}`}
         >
           {/* <div className="text-video-badge">
             THE CENTURY

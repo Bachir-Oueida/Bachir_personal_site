@@ -10,7 +10,7 @@ export default function BlogList() {
 
   return (
     <div className="blog-list">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="blog-list-header">
           <h2>Latest Articles</h2>
           <p>Insights and expertise from the luxury real estate market</p>

@@ -2,11 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Check if we're on the homepage
+  const isHomepage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,8 +49,8 @@ export default function Header() {
       path: '/about',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Bachir Oueida', path: '/about/bachir-oueda' },
-        { name: 'News', path: '/about/news' }
+        { name: 'About Bachir', path: '/about' },
+        { name: 'News', path: '/blogs' }
       ] 
     },
     { 
@@ -53,9 +58,10 @@ export default function Header() {
       path: '/properties',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'For Sale', path: '/properties/for-sale' },
-        { name: 'For Rent', path: '/properties/for-rent' },
-        { name: 'New Developments', path: '/properties/new-developments' }
+        { name: 'All Properties', path: '/properties' },
+        { name: 'For Sale', path: '/properties/sale' },
+        { name: 'For Lease', path: '/properties/lease' },
+        { name: 'Sold Properties', path: '/properties/sold' }
       ] 
     },
     { 
@@ -80,14 +86,34 @@ export default function Header() {
     },
   ];
 
+  // Determine header styling based on page and scroll state
+  const getHeaderStyle = () => {
+    if (!isHomepage) {
+      // Non-homepage: always show white background with shadow
+      return 'bg-white/95 backdrop-blur-md shadow-md';
+    }
+    // Homepage: show background only when scrolled
+    return scrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-transparent';
+  };
+  
+  // Determine text color based on page and scroll state
+  const getTextColor = () => {
+    if (!isHomepage) {
+      // Non-homepage: always black text
+      return 'text-black hover:text-gray-700';
+    }
+    // Homepage: white text when not scrolled, black when scrolled
+    return scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200';
+  };
+
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getHeaderStyle()}`}
     >
       <div className="container mx-auto px-4 py-4">
         {/* Desktop Layout */}
         <div className="hidden md:flex justify-between items-center">
-          <Link href="/" className={`text-3xl font-bold transition-colors ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}>
+          <Link href="/" className={`text-3xl font-bold transition-colors ${getTextColor()}`}>
             BACHIR OUEIDA
           </Link>
           <nav>
@@ -98,7 +124,7 @@ export default function Header() {
                     <>
                       <button 
                         onClick={() => toggleDropdown(index)}
-                        className={`flex items-center transition-colors focus:outline-none ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
+                        className={`flex items-center transition-colors focus:outline-none ${getTextColor()}`}
                       >
                         {item.name}
                         <svg 
@@ -129,7 +155,7 @@ export default function Header() {
                   ) : (
                     <Link 
                       href={item.path} 
-                      className={`transition-colors ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
+                      className={`transition-colors ${getTextColor()}`}
                     >
                       {item.name}
                     </Link>
@@ -145,7 +171,7 @@ export default function Header() {
           {/* Hamburger Menu Button */}
           <button 
             onClick={toggleMobileMenu}
-            className={`focus:outline-none transition-colors ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
+            className={`focus:outline-none transition-colors ${getTextColor()}`}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileMenuOpen ? (
@@ -157,7 +183,7 @@ export default function Header() {
           </button>
 
           {/* Centered Logo */}
-          <Link href="/" className={`text-xl font-bold transition-colors absolute left-1/2 transform -translate-x-1/2 ${scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200'}`}>
+          <Link href="/" className={`text-xl font-bold transition-colors absolute left-1/2 transform -translate-x-1/2 ${getTextColor()}`}>
             BACHIR OUEIDA
           </Link>
 

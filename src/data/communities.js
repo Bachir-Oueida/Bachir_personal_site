@@ -1,10 +1,18 @@
 import beverlyHills from '../../public/images/beverly-hills.jpg';
-import brentwood from '../../public/images/brentwood.jpg';
-import holmbyHills from '../../public/images/holmby-hills.jpg';
+// import brentwood from '../../public/images/brentwood.jpg';
+import brentwood from '../../public/images/brentwood1.jpg';
+// import holmbyHills from '../../public/images/holmby-hills.jpg';
+import holmbyHills from '../../public/images/holmby-hills.jpeg';
 import pacificPalisades from '../../public/images/pacific-palisades.jpg';
-import malibu from '../../public/images/malibu.jpg';
+// import pacificPalisades from '../../public/images/pacific-palisades.avif';
+
+// import malibu from '../../public/images/malibu.jpg';
+import malibu from '../../public/images/malibu1.jpg';
+
 import marinaDelRey from '../../public/images/marina-del-rey.jpg';
-import belAir from '../../public/images/bel-air.jpg';
+// import belAir from '../../public/images/bel-air.jpg';
+import belAir from '../../public/images/bel-air.jpeg';
+
 import trousdaleEstates from '../../public/images/trousdale-estates.jpg';
 
 

@@ -1,8 +1,8 @@
 const blogsData = [
   {
     id: 1,
-    title: "BACHIR OUEIDA'S $20M IS CENTURY CITY'S PRICIEST SALE",
-    slug: "bachir-oueida-20m-century-city-priciest-sale",
+    title: "Denzel Washington bought this luxe $10.9 million L.A. condo from a Saudi Princess",
+    slug: "denzel-washington-bought-this-luxe-$10.9-million-LA-condo-from-a-saudi-princess",
     excerpt: "Discover the details behind Century City's most expensive real estate transaction and what it means for the luxury market.",
     content: `
       <p>In a groundbreaking transaction that has reshaped Century City's luxury real estate landscape, Bachir Oueida has achieved the area's most expensive sale at $20 million. This unprecedented deal not only sets new market standards but also demonstrates the continued strength of Los Angeles' premium property sector.</p>

@@ -1,6 +1,6 @@
 
 @import "tailwindcss";
-@import "../styles/scrollAnimations.css";
+/* @import "../styles/scrollAnimations.css"; */
 
 /* Smooth scrolling behavior */
 html {
@@ -68,7 +68,8 @@ p{
 
 .global-btn{
   display: inline-block;
-  background: linear-gradient(135deg, #2c2c2c, #c0c0c0);
+  /* background: linear-gradient(135deg, #2c2c2c, #c0c0c0); */
+  background-color: #000;
   color: white;
   padding: 15px 40px;
   border-radius: 30px;
@@ -87,16 +88,18 @@ p{
 }
 
 .global-btn:hover{
-  background: linear-gradient(135deg, #1a1a1a, #a8a8a8);
+  /* background: linear-gradient(135deg, #1a1a1a, #a8a8a8); */
+  background-color: #000;
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(44, 44, 44, 0.4);
-  color: white;
+  color: #fff;
   text-decoration: none !important;
 }
 
 .global-btn-white{
-  background: linear-gradient(135deg, #c0c0c0, #2c2c2c);
-  color: #fff;
+  /* background: linear-gradient(135deg, #c0c0c0, #2c2c2c); */
+  background-color: #fff;
+  color: #000;
   padding: 15px 40px;
   border-radius: 30px;
   text-decoration: none;
@@ -113,7 +116,8 @@ p{
 }
 
 .global-btn-white:hover{
-  background: linear-gradient(135deg, #1a1a1a, #a8a8a8);
+  /* background: linear-gradient(135deg, #1a1a1a, #a8a8a8); */
+  background-color: #000;
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(44, 44, 44, 0.4);
   color: #fff;

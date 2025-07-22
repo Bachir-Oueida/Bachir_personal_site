@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import communitiesData from "../data/communities";
 import "../styles/communities.css";
 import { useScrollAnimation, useStaggeredAnimation } from "../hooks/useScrollAnimation";
@@ -17,7 +18,7 @@ export default function Communities() {
       >
         <div className="text-content">
             <h3>Communities</h3>
-            <a href="/communities">View All</a>
+            <Link href="/communities">View All</Link>
         </div>
       </div>
       {communitiesData.map((community, index) => (

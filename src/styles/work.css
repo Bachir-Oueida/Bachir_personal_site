@@ -1,0 +1,125 @@
+.work-section {
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/bg-house.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.work-overlay {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 1200px;
+    max-width: 90%;
+    padding: 60px 60px;
+    /* border-radius: 8px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.work-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-title {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+}
+
+.work-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+.work-subtitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    margin-top: 30px;
+    font-style: italic;
+    text-transform: none;
+}
+
+.work-description {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.work-button-container {
+    margin-top: 2rem;
+}
+
+/* .work-button {
+    background: #333;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+} */
+
+/* .work-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .work-overlay {
+        padding: 40px 30px;
+    }
+    
+    .work-title {
+        font-size: 2.2rem;
+    }
+    
+    .work-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-overlay {
+        padding: 30px 20px;
+    }
+    
+    .work-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .work-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .work-description {
+        font-size: 1rem;
+    }
+}

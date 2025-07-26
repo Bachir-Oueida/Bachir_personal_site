@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Raleway, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,18 +14,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
 export const metadata = {
-  title: "Real Estate | Find Your Dream Home",
-  description: "Discover the perfect property that matches your lifestyle and preferences. Browse our selection of residential and commercial properties.",
+  title: "Top Beverly Hills Luxury Real Estate Agent",
+  description: "Top Beverly Hills Luxury Real Estate Agent",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${playfairDisplay.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ import HighRiseSlider from "../components/HighRiseSlider";
 import Work from "../components/Work";
 import Newsletter from "../components/Newsletter";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen">

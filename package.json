@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "next": "15.3.4",
-    "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-slick": "^0.30.3",
@@ -22,6 +21,5 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4"
-    "eslint-config-next": "15.3.4"
   }
 }

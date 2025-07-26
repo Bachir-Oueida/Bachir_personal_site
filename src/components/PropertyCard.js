@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function PropertyCard({ property }) {
   const formatPrice = (price) => {
-    if (property.status === 'lease') {
+    if (property.status === "lease") {
       return `$${price.toLocaleString()}/month`;
     }
     return `$${price.toLocaleString()}`;
@@ -11,9 +11,9 @@ export default function PropertyCard({ property }) {
 
   const getStatusBadge = (status) => {
     const badges = {
-      sale: { text: 'For Sale', class: 'sale' },
-      sold: { text: 'Sold', class: 'sold' },
-      lease: { text: 'For Lease', class: 'lease' }
+      sale: { text: "For Sale", class: "sale" },
+      sold: { text: "Sold", class: "sold" },
+      lease: { text: "For Lease", class: "lease" },
     };
     return badges[status] || badges.sale;
   };
@@ -35,16 +35,22 @@ export default function PropertyCard({ property }) {
             {statusBadge.text}
           </div>
         </div>
-        
+
         <div className="property-info">
           <h3 className="property-title">{property.title}</h3>
-          <p className="property-price">{formatPrice(property.price)}</p>
+          {/* <p className="property-price">{formatPrice(property.price)}</p> */}
+          <p className={`property-price ${!property.price ? "invisible" : ""}`}>
+            {formatPrice(property.price)}
+          </p>
+
           <p className="property-address">{property.address}</p>
-          
+
           <div className="property-details">
             <div className="detail-item">
               <span className="detail-label">Area:</span>
-              <span className="detail-value">{property.area.toLocaleString()} sq ft</span>
+              <span className={`detail-value ${!property.area ? 'invisible' : ''}`}>
+                {property.area.toLocaleString()} sq ft
+              </span>
             </div>
             <div className="detail-item">
               <span className="detail-label">Bedrooms:</span>
@@ -55,21 +61,25 @@ export default function PropertyCard({ property }) {
               <span className="detail-value">{property.bathrooms}</span>
             </div>
           </div>
-          
+
           <div className="property-description">
             <p>{property.description.substring(0, 120)}...</p>
           </div>
-          
+
           <div className="property-features">
             {property.features.slice(0, 3).map((feature, index) => (
-              <span key={index} className="feature-tag">{feature}</span>
+              <span key={index} className="feature-tag">
+                {feature}
+              </span>
             ))}
             {property.features.length > 3 && (
-              <span className="feature-tag more">+{property.features.length - 3} more</span>
+              <span className="feature-tag more">
+                +{property.features.length - 3} more
+              </span>
             )}
           </div>
         </div>
       </Link>
     </div>
   );
-} 
+}

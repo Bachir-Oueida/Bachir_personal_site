@@ -5,8 +5,9 @@ import Footer from "../../../components/Footer";
 import { getBlogBySlug, formatDate } from "../../../utils/blogUtils";
 import "../../../styles/blogPost.css";
 
-export default function BlogPost({ params }) {
-  const blog = getBlogBySlug(params.slug);
+export default async function BlogPost({ params }) {
+  const { slug } = await params;
+  const blog = getBlogBySlug(slug);
   
   if (!blog) {
     notFound();

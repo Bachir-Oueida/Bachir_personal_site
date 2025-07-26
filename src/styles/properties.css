@@ -474,7 +474,7 @@
 .property-description,
 .property-location-section {
   background: white;
-  padding: 40px;
+  padding: 20px;
   margin-bottom: 0;
 }
 
@@ -500,7 +500,6 @@
   color: #555;
   line-height: 1.8;
   font-size: 1.1rem;
-  margin-bottom: 30px;
 }
 
 .property-amenities h3 {

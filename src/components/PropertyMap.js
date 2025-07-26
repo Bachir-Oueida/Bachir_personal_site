@@ -7,6 +7,12 @@ export default function PropertyMap({ lat, lng, title }) {
   const mapInstanceRef = useRef(null);
   const [isClient, setIsClient] = useState(false);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  
+  // Debug: Log API key status (without exposing the full key)
+  console.log('Google Maps API Key available:', !!apiKey);
+  console.log('API Key length:', apiKey ? apiKey.length : 0);
+
 
   // Ensure component only renders on client
   useEffect(() => {
@@ -156,16 +162,23 @@ export default function PropertyMap({ lat, lng, title }) {
 
     // Load Google Maps API if not already loaded
     if (!window.google) {
+      if (!apiKey) {
+        console.error('Google Maps API key is missing. Please check your .env.local file.');
+        initFallbackMap();
+        return;
+      }
+      
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBue2lNrmC4_axgZwk9VzG3F-QpKnwVwhA&callback=initGoogleMap`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initGoogleMap`;
       script.async = true;
       script.defer = true;
       
       // Use a unique callback name to avoid conflicts
       window.initGoogleMap = initMap;
       
-      script.onerror = () => {
-        console.log('Google Maps API failed to load, using fallback');
+      script.onerror = (error) => {
+        console.error('Google Maps API failed to load:', error);
+        console.log('API Key used:', apiKey ? `${apiKey.substring(0, 10)}...` : 'undefined');
         initFallbackMap();
       };
       
@@ -184,7 +197,7 @@ export default function PropertyMap({ lat, lng, title }) {
         delete window.initGoogleMap;
       }
     };
-  }, [isClient, lat, lng, title]);
+  }, [isClient, lat, lng, title, apiKey]);
 
   const openInGoogleMaps = () => {
     const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;

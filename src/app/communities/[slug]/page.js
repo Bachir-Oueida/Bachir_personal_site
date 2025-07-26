@@ -2,9 +2,10 @@ import CommunityDetail from '@/components/CommunityDetail';
 import communitiesData from '@/data/communities';
 import { notFound } from 'next/navigation';
 
-export default function CommunityPage({ params }) {
+export default async function CommunityPage({ params }) {
   // Convert slug back to title format for matching
-  const communityTitle = params.slug
+  const { slug } = await params;
+  const communityTitle = slug
     .split('-')
     .map(word => word.toUpperCase())
     .join(' ');

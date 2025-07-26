@@ -30,7 +30,7 @@ export default function TheCenturyPage() {
           
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-number">46</span>
+              <span className="stat-number">42</span>
               <span className="stat-label">Floors</span>
             </div>
             <div className="stat-divider"></div>

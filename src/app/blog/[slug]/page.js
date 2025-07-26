@@ -5,8 +5,9 @@ import Footer from "../../../components/Footer";
 import { getBlogBySlug, formatDate } from "../../../utils/blogUtils";
 import "../../../styles/blogPost.css";
 
-export default function BlogPost({ params }) {
-  const blog = getBlogBySlug(params.slug);
+export default async function BlogPost({ params }) {
+  const { slug } = await params;
+  const blog = getBlogBySlug(slug);
   
   if (!blog) {
     notFound();
@@ -14,7 +15,6 @@ export default function BlogPost({ params }) {
 
   return (
     <div className="min-h-screen">
-      <Header />
       
       <article className="blog-post">
         <div className="blog-post-header">
@@ -61,7 +61,6 @@ export default function BlogPost({ params }) {
         </div>
       </article>
       
-      <Footer />
     </div>
   );
 }

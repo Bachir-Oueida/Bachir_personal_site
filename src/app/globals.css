@@ -156,3 +156,7 @@ p{
 .mt-4{
   margin-top: 1rem;
 }
+
+.invisible{
+  visibility: hidden;
+}

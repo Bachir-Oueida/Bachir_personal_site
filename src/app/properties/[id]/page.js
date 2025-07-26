@@ -3,8 +3,9 @@ import properties from '@/data/properties';
 import { notFound } from 'next/navigation';
 import "../../../styles/properties.css";
 
-export default function PropertyDetailPage({ params }) {
-  const property = properties.find(p => p.id === parseInt(params.id));
+export default async function PropertyDetailPage({ params }) {
+  const { id } = await params;
+  const property = properties.find(p => p.id === parseInt(id));
   
   if (!property) {
     notFound();

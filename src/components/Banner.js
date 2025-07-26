@@ -14,19 +14,22 @@ export default function Banner() {
       topText: "EXCEPTIONAL",
       mainText: "REPRESENTATION",
       description: "Find your Dream Home. Douglas Elliman Real Estate.",
-      buttonText: "View Exclusive Properties"
+      buttonText: "View Exclusive Properties",
+      buttonLink: "/properties"
     },
     {
       topText: "LUXURY",
       mainText: "LIFESTYLE",
       description: "Experience the finest in Beverly Hills luxury living with personalized service.",
-      buttonText: "Explore Properties"
+      buttonText: "Explore Properties",
+      buttonLink: "/high-rises"
     },
     {
       topText: "PREMIUM",
       mainText: "SERVICE",
       description: "Dedicated to excellence in every real estate transaction and client relationship.",
-      buttonText: "Contact Us Today"
+      buttonText: "Contact Us Today",
+      buttonLink: "/contact"
     }
   ];
 
@@ -105,24 +108,11 @@ export default function Banner() {
               ? 'opacity-0 transform -translate-x-20 rotate-6 scale-75' 
               : 'opacity-100 transform translate-x-0 rotate-0 scale-100'
           }`} style={{ transitionDelay: isAnimating ? '300ms' : '800ms' }}>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-medium tracking-wide uppercase hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 animate-bounce-slow">
+            <a href={currentContent.buttonLink} className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-medium tracking-wide uppercase hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 animate-bounce-slow">
               {currentContent.buttonText}
-            </button>
+            </a>
           </div>
         </div>
-
-        {/* Slide indicators */}
-        {/* <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3">
-          {bannerContent.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
-              }`}
-            />
-          ))}
-        </div> */}
       </div>
     </div>
   );

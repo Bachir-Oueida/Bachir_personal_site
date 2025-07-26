@@ -33,7 +33,7 @@ export default function AgentProfile() {
                         />
                         <div className="agent-image-overlay">
                             <div className="achievement-badge">
-                                <span className="badge-number">10+</span>
+                                <span className="badge-number">15+</span>
                                 <span className="badge-text">Years Experience</span>
                             </div>
                         </div>

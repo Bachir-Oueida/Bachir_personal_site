@@ -19,6 +19,7 @@ const Slider = dynamic(() => import("react-slick"), { ssr: false });
 const propertyData = [
   {
     id: 1,
+    link: "/properties/12",
     image: image1,
     address: "635 PERUGIA WAY, BEL AIR",
     location: "CA 90077",
@@ -26,12 +27,13 @@ const propertyData = [
     bathrooms: 7,
     price: "$12,500,000",
     area: "8,500",
-    status: "For Sale",
+    status: "Sold",
     description: "This traditional designed home is situated on a Cul-de-sac in prime lower Bel Air overlooking the Bel Air Country Club Golf Course and on a clear day you can see the ocean. There is a newer state-of-the-art eat in kitchen, with center island, cozy dining room with fireplace, sun filled living room with fireplace, large family room with fireplace and paneled den/library with fireplace.",
     features: ["Golf Course Views", "Ocean Views", "State-of-the-Art Kitchen", "Multiple Fireplaces", "Premium Location"]
   },
   {
     id: 2,
+    link: "/properties/14",
     image: image2,
     address: "1518 BEL AIR RD",
     location: "LOS ANGELES, CA 90077",
@@ -39,12 +41,13 @@ const propertyData = [
     bathrooms: 8,
     price: "$18,750,000",
     area: "9,310",
-    status: "For Sale",
+    status: "Sold",
     description: "The absolute ultimate in glamorous contemporary living. A true timeless masterpiece featuring the latest in technology and materials and infused with Old World class and spectacular magic. Completely remodeled and completed in 2014. A state-of-the-art open floor plan with grand open kitchen/family room and breakfast nook seating for 10.",
     features: ["Contemporary Design", "Latest Technology", "Remodeled 2014", "Open Floor Plan", "Grand Kitchen"]
   },
   {
     id: 3,
+    link: "/properties/17",
     image: image3,
     address: "1 W CENTURY DRIVE, 14D",
     location: "WESTWOOD / CENTURY CITY, CA",
@@ -52,7 +55,7 @@ const propertyData = [
     bathrooms: 3,
     price: "$2,850,000",
     area: "2,100",
-    status: "For Sale",
+    status: "Sold",
     description: "This is a beautiful two bedroom, three bath, unit with an open gourmet kitchen and stunning panoramic views. This residence features a private elevator lobby, fireplaces, generous terraces. One of the most sought after buildings in Los Angeles/Century City. Designed by Robert A.M Stern.",
     features: ["Panoramic Views", "Gourmet Kitchen", "Private Elevator", "Generous Terraces", "Robert A.M Stern Design"]
   }
@@ -181,10 +184,10 @@ export default function TextSliderModern() {
                       </div> */}
 
                       <div className="property-actions">
-                        <button className="action-btn primary">
+                        <a href={property.link} className="action-btn primary">
                           View Details
                           <span className="btn-arrow">→</span>
-                        </button>
+                        </a>
                         {/* <button className="action-btn secondary">
                           Schedule Tour
                         </button> */}

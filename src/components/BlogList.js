@@ -40,9 +40,9 @@ export default function BlogList() {
                 <p className="blog-excerpt">{blog.excerpt}</p>
                 
                 <div className="blog-meta">
-                  <div className="blog-author">
+                  {/* <div className="blog-author">
                     <span>By {blog.author}</span>
-                  </div>
+                  </div> */}
                   <div className="blog-date">
                     <span>{formatDate(blog.publishedDate)}</span>
                   </div>

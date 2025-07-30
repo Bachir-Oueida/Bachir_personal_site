@@ -70,7 +70,7 @@ export default function Header() {
       hasDropdown: true,
       dropdownItems: [
         { name: 'The Avery', path: '/high-rises/the-avery' },
-        { name: 'Royal Atlantis', path: '/high-rises/royal-atlantis' },
+        // { name: 'Royal Atlantis', path: '/high-rises/royal-atlantis' },
         { name: 'The Century', path: '/high-rises/the-century' }
       ] 
     },

@@ -71,7 +71,7 @@ export default function HighRiseSlider() {
             </div>
           </div>
         </div>
-        <div className="slide">
+        {/* <div className="slide">
           <div className="slide-content">
             <div className="slide-image-container">
               <Image src={image2} alt="Slide Image" className="slide-image" />
@@ -93,7 +93,7 @@ export default function HighRiseSlider() {
               <button className="slide-button global-btn">Learn More</button>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="slide">
           <div className="slide-content">
             <div className="slide-image-container">

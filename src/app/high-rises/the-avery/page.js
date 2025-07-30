@@ -111,7 +111,7 @@ export default function TheAveryPage() {
             <div className="residence-card featured">
               <div className="residence-image">
                 <Image
-                  src="/images/slider1.jpg"
+                  src="/images/high-rises/avery/2.jpg"
                   alt="Penthouse Suite"
                   width={600}
                   height={400}
@@ -129,7 +129,7 @@ export default function TheAveryPage() {
             <div className="residence-card">
               <div className="residence-image">
                 <Image
-                  src="/images/slider2.jpg"
+                  src="/images/high-rises/avery/1.jpg"
                   alt="Sky Homes"
                   width={400}
                   height={300}
@@ -147,7 +147,41 @@ export default function TheAveryPage() {
             <div className="residence-card">
               <div className="residence-image">
                 <Image
-                  src="/images/slider3.jpeg"
+                  src="/images/high-rises/avery/3.jpg"
+                  alt="Premium Studios"
+                  width={400}
+                  height={300}
+                />
+                <div className="residence-overlay">
+                  <div className="residence-details">
+                    <h3>Premium Collection</h3>
+                    <p>$3.5M - $6M</p>
+                    <span className="residence-size">1,200 - 2,000 sq ft</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="residence-card">
+              <div className="residence-image">
+                <Image
+                  src="/images/high-rises/avery/4.jpg"
+                  alt="Premium Studios"
+                  width={400}
+                  height={300}
+                />
+                <div className="residence-overlay">
+                  <div className="residence-details">
+                    <h3>Premium Collection</h3>
+                    <p>$3.5M - $6M</p>
+                    <span className="residence-size">1,200 - 2,000 sq ft</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="residence-card">
+              <div className="residence-image">
+                <Image
+                  src="/images/high-rises/avery/6.jpg"
                   alt="Premium Studios"
                   width={400}
                   height={300}
@@ -256,8 +290,8 @@ export default function TheAveryPage() {
             <div className="location-visual">
               <div className="location-map">
                 <Image
-                  src="/images/bg-house.jpg"
-                  alt="Century City Location"
+                  src="/images/high-rises/avery/1.jpg"
+                  alt="avery Location"
                   width={500}
                   height={400}
                   className="map-image"

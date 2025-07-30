@@ -144,7 +144,7 @@ export default function CommunitiesModern({ isFullPage = false }) {
               <div className="stat-label">Premier Communities</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">$2.5B+</div>
+              <div className="stat-number">$100M+</div>
               <div className="stat-label">Properties Sold</div>
             </div>
             <div className="stat-item">

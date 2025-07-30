@@ -152,7 +152,7 @@ export default function TheCenturyPage() {
             <div className="collection-card-century featured-century">
               <div className="collection-image-century">
                 <Image
-                  src="/images/slider1.jpg"
+                  src="/images/high-rises/century/1.jpg"
                   alt="Penthouse Collection"
                   width={600}
                   height={400}
@@ -175,7 +175,7 @@ export default function TheCenturyPage() {
             <div className="collection-card-century">
               <div className="collection-image-century">
                 <Image
-                  src="/images/slider2.jpg"
+                  src="/images/high-rises/century/2.jpg"
                   alt="Executive Residences"
                   width={400}
                   height={300}
@@ -193,7 +193,7 @@ export default function TheCenturyPage() {
             <div className="collection-card-century">
               <div className="collection-image-century">
                 <Image
-                  src="/images/slider3.jpeg"
+                  src="/images/high-rises/century/3.jpg"
                   alt="Luxury Residences"
                   width={400}
                   height={300}
@@ -207,6 +207,42 @@ export default function TheCenturyPage() {
                 </div>
               </div>
             </div>
+            <div className="collection-card-century">
+              <div className="collection-image-century">
+                <Image
+                  src="/images/high-rises/century/4.jpg"
+                  alt="Executive Residences"
+                  width={400}
+                  height={300}
+                />
+                <div className="collection-overlay-century">
+                  <div className="collection-details-century">
+                    <h3>Executive Residences</h3>
+                    <p className="collection-price-century">$8M - $18M</p>
+                    <span className="collection-size-century">2,500 - 4,500 sq ft</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="collection-card-century">
+              <div className="collection-image-century">
+                <Image
+                  src="/images/high-rises/century/5.jpg"
+                  alt="Luxury Residences"
+                  width={400}
+                  height={300}
+                />
+                <div className="collection-overlay-century">
+                  <div className="collection-details-century">
+                    <h3>Luxury Residences</h3>
+                    <p className="collection-price-century">$4M - $9M</p>
+                    <span className="collection-size-century">1,400 - 2,500 sq ft</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
@@ -304,7 +340,7 @@ export default function TheCenturyPage() {
             
             <div className="location-visual-century">
               <Image
-                src="/images/bg-house.jpg"
+                src="/images/high-rises/century/1.jpg"
                 alt="Century City Location"
                 width={500}
                 height={400}

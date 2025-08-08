@@ -33,7 +33,7 @@ export default async function BlogPost({ params }) {
               <div className="blog-post-meta">
                 <span className="blog-post-category">{blog.category}</span>
                 <span className="blog-post-date">{formatDate(blog.publishedDate)}</span>
-                {/* <span className="blog-post-author">By {blog.author}</span> */}
+                <span className="blog-post-author">By {blog.author}</span>
                 <span className="blog-post-read-time">{blog.readTime}</span>
               </div>
             </div>
@@ -51,11 +51,11 @@ export default async function BlogPost({ params }) {
             <div className="blog-post-tags">
               <h4>Tags:</h4>
               <div className="tags-list">
-                {blog.tags.map((tag, index) => (
+                {/* {blog.tags.map((tag, index) => (
                   <span key={index} className="tag">
                     {tag}
                   </span>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>

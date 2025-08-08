@@ -1,5 +1,6 @@
 import PropertyList from '@/components/PropertyList';
 import properties from '@/data/properties';
+import '../../../styles/properties.css';
 
 export default function LeasePropertiesPage() {
   const leaseProperties = properties.filter(property => property.status === 'lease');

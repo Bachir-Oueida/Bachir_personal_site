@@ -27,7 +27,7 @@ export default function BlogList() {
                   height={250}
                   className="blog-image"
                 />
-                <div className="blog-category">{blog.category}</div>
+                {/* <div className="blog-category">{blog.category}</div> */}
               </div>
               
               <div className="blog-card-content">
@@ -40,9 +40,9 @@ export default function BlogList() {
                 <p className="blog-excerpt">{blog.excerpt}</p>
                 
                 <div className="blog-meta">
-                  <div className="blog-author">
+                  {/* <div className="blog-author">
                     <span>By {blog.author}</span>
-                  </div>
+                  </div> */}
                   <div className="blog-date">
                     <span>{formatDate(blog.publishedDate)}</span>
                   </div>
@@ -52,11 +52,11 @@ export default function BlogList() {
                 </div>
                 
                 <div className="blog-tags">
-                  {blog.tags.slice(0, 3).map((tag, index) => (
+                  {/* {blog.tags.slice(0, 3).map((tag, index) => (
                     <span key={index} className="blog-tag">
                       {tag}
                     </span>
-                  ))}
+                  ))} */}
                 </div>
                 
                 <Link href={`/blog/${blog.slug}`} className="blog-read-more">

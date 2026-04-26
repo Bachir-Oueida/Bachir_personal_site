@@ -51,11 +51,11 @@ export default async function BlogPost({ params }) {
             <div className="blog-post-tags">
               <h4>Tags:</h4>
               <div className="tags-list">
-                {blog.tags.map((tag, index) => (
+                {/* {blog.tags.map((tag, index) => (
                   <span key={index} className="tag">
                     {tag}
                   </span>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>

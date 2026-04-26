@@ -29,6 +29,7 @@ const PropertyMap = dynamic(() => import('./PropertyMap'), {
 export default function PropertyDetail({ property }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showImageModal, setShowImageModal] = useState(false);
 
   if (!property) {
     return (
@@ -63,6 +64,15 @@ export default function PropertyDetail({ property }) {
     setShowContactForm(false);
   };
 
+  const openImageModal = () => {
+    console.log('Opening image modal for:', property.images[currentImageIndex]);
+    setShowImageModal(true);
+  };
+
+  const closeImageModal = () => {
+    setShowImageModal(false);
+  };
+
   return (
     <div className="property-detail">
       {/* Property Hero Section */}
@@ -75,6 +85,8 @@ export default function PropertyDetail({ property }) {
               width={800}
               height={600}
               className="gallery-image"
+              onClick={openImageModal}
+              style={{ cursor: 'zoom-in' }}
             />
             <button className="gallery-nav prev" onClick={prevImage}>
               &#8249;
@@ -170,6 +182,64 @@ export default function PropertyDetail({ property }) {
           <PropertyMap lat={property.lat} lng={property.lng} title={property.title} />
         </div>
       </section>
+
+      {/* Image Modal */}
+      {showImageModal && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="image-modal-close"
+              onClick={closeImageModal}
+            >
+              ×
+            </button>
+            
+            <div className="image-modal-image-container">
+              <button 
+                className="image-modal-nav prev" 
+                onClick={prevImage}
+                disabled={property.images.length <= 1}
+              >
+                &#8249;
+              </button>
+              
+              <img
+                src={property.images[currentImageIndex]}
+                alt={`${property.title} - Full Size Image ${currentImageIndex + 1}`}
+                className="image-modal-image"
+              />
+              
+              <button 
+                className="image-modal-nav next" 
+                onClick={nextImage}
+                disabled={property.images.length <= 1}
+              >
+                &#8250;
+              </button>
+            </div>
+            
+            <div className="image-modal-info">
+              <span>{currentImageIndex + 1} of {property.images.length}</span>
+            </div>
+            
+            <div className="image-modal-thumbnails">
+              {property.images.map((image, index) => (
+                <div
+                  key={index}
+                  className={`image-modal-thumbnail ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => selectImage(index)}
+                >
+                  <img
+                    src={image}
+                    alt={`${property.title} thumbnail ${index + 1}`}
+                    className="image-modal-thumbnail-image"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Contact Form Modal */}
       {showContactForm && (

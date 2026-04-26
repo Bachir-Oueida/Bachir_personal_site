@@ -51,16 +51,16 @@ export default function AboutPage() {
               <div className="story-description">
                 <p>Beverly Hills Greater Los Angeles Association of Realtors</p>
                 <p>
-                Bachir Oueida is one of Los Angeles' most trusted and accomplished luxury real estate professionals, with over 30 years of experience representing ultra-high-net-worth buyers, sellers, and investors across Beverly Hills, Bel Air, Holmby Hills, Trousdale Estates, the Bird Streets, Hollywood Hills, Century City, and the broader Westside.
+                Bachir Oueida is one of Los Angeles&apos; most trusted and accomplished luxury real estate professionals, with over 30 years of experience representing ultra-high-net-worth buyers, sellers, and investors across Beverly Hills, Bel Air, Holmby Hills, Trousdale Estates, the Bird Streets, Hollywood Hills, Century City, and the broader Westside.
                 </p>
                 <p>
                 With a career built on discretion, integrity, and an unmatched command of the Los Angeles luxury market, Bachir consistently handles some of the most significant and high-profile transactions in Southern California, across both grand single-family estates and world-class residential properties at every tier of the market.
                 </p>
                 <p>
-                His record-setting sales history, deep-rooted relationships with private wealth clients, celebrities, and international investors, and his global network of brokers and advisors position him among a rare and elite group of agents trusted with Los Angeles' most extraordinary properties, with no ceiling on what he can achieve for his clients.
+                His record-setting sales history, deep-rooted relationships with private wealth clients, celebrities, and international investors, and his global network of brokers and advisors position him among a rare and elite group of agents trusted with Los Angeles&apos; most extraordinary properties, with no ceiling on what he can achieve for his clients.
                 </p>
                 <p>
-                Among his many distinctions, Bachir has closed over 100 transactions at The Century, Century City's most prestigious address, including six of the building's nine penthouses, a record unmatched by any agent in the building's history. In 2025, he represented the $39.1 million sale of a full-floor penthouse at The Century, the most expensive condominium sale in Los Angeles County history at the time, and among the most significant condo transactions ever recorded in the state of California. His media presence spans The Real Deal, the Los Angeles Times, Robb Report, DIGS, and Yahoo! Finance, where he is regularly cited as a Westside luxury market authority.
+                Among his many distinctions, Bachir has closed over 100 transactions at The Century, Century City&apos;s most prestigious address, including six of the building&apos;s nine penthouses, a record unmatched by any agent in the building&apos;s history. In 2025, he represented the $39.1 million sale of a full-floor penthouse at The Century, the most expensive condominium sale in Los Angeles County history at the time, and among the most significant condo transactions ever recorded in the state of California. His media presence spans The Real Deal, the Los Angeles Times, Robb Report, DIGS, and Yahoo! Finance, where he is regularly cited as a Westside luxury market authority.
                 </p>
                 <p>
                 At the core of his practice is one guiding principle: the client always comes first. Bachir does not measure success through accolades, he measures it through the trust, loyalty, and satisfaction of the people he serves.

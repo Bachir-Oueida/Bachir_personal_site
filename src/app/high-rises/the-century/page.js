@@ -371,7 +371,7 @@ export default function TheCenturyPage() {
                 <span className="metric-label">Exclusive Residences</span>
               </div>
               <div className="investment-metric">
-                <span className="metric-number">15+</span>
+                <span className="metric-number">30+</span>
                 <span className="metric-label">Years of Excellence</span>
               </div>
               <div className="investment-metric">

@@ -51,27 +51,19 @@ export default function AboutPage() {
               <div className="story-description">
                 <p>Beverly Hills Greater Los Angeles Association of Realtors</p>
                 <p>
-                  As an exceptionalBeverly Hills Realtor and beyond, Bachir
-                  Oueida has acquired extensive knowledge and expertise in every
-                  aspect of the real estate industry. His in depth knowledge and
-                  valuable advise make him a leader in the industry, winning him
-                  the representation of the most significant properties on the
-                  market. Bachir possesses an outstanding track record of
-                  ensuring personalized service resulting in an unsurpassed
-                  client loyalty for over a decade.
+                Bachir Oueida is one of Los Angeles&apos; most trusted and accomplished luxury real estate professionals, with over 30 years of experience representing ultra-high-net-worth buyers, sellers, and investors across Beverly Hills, Bel Air, Holmby Hills, Trousdale Estates, the Bird Streets, Hollywood Hills, Century City, and the broader Westside.
                 </p>
                 <p>
-                  His expertise in finance and economy coupled with a dedication
-                  to service have earned Bachir a stellar reputation. Bachir has
-                  made a name for himself among clients as the top go-to real
-                  estate agent in Beverly Hills, Los Angeles and Southern
-                  California. His commitment and integrity have helped him
-                  navigate skillful negotiations that exceed industry standards.
-                  His golden standards have resulted in building a clientele
-                  that continues to rely on his service as a source to sell and
-                  acquire assets that remain ahead of the curve in the
-                  marketplace. Clients continuously turn to him as a trusted
-                  resource with their most valuable assets.
+                With a career built on discretion, integrity, and an unmatched command of the Los Angeles luxury market, Bachir consistently handles some of the most significant and high-profile transactions in Southern California, across both grand single-family estates and world-class residential properties at every tier of the market.
+                </p>
+                <p>
+                His record-setting sales history, deep-rooted relationships with private wealth clients, celebrities, and international investors, and his global network of brokers and advisors position him among a rare and elite group of agents trusted with Los Angeles&apos; most extraordinary properties, with no ceiling on what he can achieve for his clients.
+                </p>
+                <p>
+                Among his many distinctions, Bachir has closed over 100 transactions at The Century, Century City&apos;s most prestigious address, including six of the building&apos;s nine penthouses, a record unmatched by any agent in the building&apos;s history. In 2025, he represented the $39.1 million sale of a full-floor penthouse at The Century, the most expensive condominium sale in Los Angeles County history at the time, and among the most significant condo transactions ever recorded in the state of California. His media presence spans The Real Deal, the Los Angeles Times, Robb Report, DIGS, and Yahoo! Finance, where he is regularly cited as a Westside luxury market authority.
+                </p>
+                <p>
+                At the core of his practice is one guiding principle: the client always comes first. Bachir does not measure success through accolades, he measures it through the trust, loyalty, and satisfaction of the people he serves.
                 </p>
               </div>
             </div>
@@ -166,7 +158,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">15+</div>
+              <div className="stat-number">30+</div>
               <div className="stat-label">Years Experience</div>
             </div>
             <div className="stat-item">

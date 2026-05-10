@@ -53,6 +53,12 @@ export default function TextVideo() {
             and business expressed timeless West Coast elegance and contemporary international refinement. The Century&apos;s Penthouse 
             residences feature open floor plan design and private outdoor space.
           </p>
+            <hr className="text-video-divider my-4" />
+            <ul className="text-video-list list-disc list-inside">
+              <li className="text-video-list-item">100+ Closings at The Century (Sales, Resales & Leases)</li>
+              <li className="text-video-list-item">6 of 9 Penthouses Sold — A Record Unmatched by Any Agent in the Building's History</li>
+              <li className="text-video-list-item">In 2025, Represented the Sale of the Most Expensive Condominium in the History of California — $39 Million at The Century</li>
+            </ul>
         </div>
       </div>
     </div>

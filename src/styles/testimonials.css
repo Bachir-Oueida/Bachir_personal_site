@@ -1,0 +1,230 @@
+/* ── Testimonials Section ─────────────────────────────────────────────────── */
+
+.testimonials-section {
+  position: relative;
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+  overflow: hidden;
+}
+
+/* subtle gold top-border — mirrors communitiesModern */
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
+}
+
+.testimonials-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+
+.testimonials-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonials-eyebrow {
+  font-family: "Gill Sans", "Optima", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #d4af37;
+  text-transform: uppercase;
+}
+
+.testimonials-title {
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.testimonials-rule {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* ── Card ───────────────────────────────────────────────────────────────────── */
+
+.testimonials-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.testimonials-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 60px 64px 52px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+/* decorative corner lines */
+.testimonials-card::before,
+.testimonials-card::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: #d4af37;
+  border-style: solid;
+}
+
+.testimonials-card::before {
+  top: 16px;
+  left: 16px;
+  border-width: 1px 0 0 1px;
+}
+
+.testimonials-card::after {
+  bottom: 16px;
+  right: 16px;
+  border-width: 0 1px 1px 0;
+}
+
+.testimonials-quote-mark {
+  display: block;
+  font-family: "Georgia", serif;
+  font-size: 5rem;
+  line-height: 0.6;
+  color: #d4af37;
+  margin-bottom: 28px;
+  opacity: 0.7;
+  user-select: none;
+}
+
+.testimonials-quote {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.85;
+  color: #444;
+  margin: 0 0 36px;
+}
+
+.testimonials-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.testimonials-name {
+  font-family: "Gill Sans", "Optima", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.testimonials-detail {
+  font-family: "Gill Sans", "Optima", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+/* ── Navigation ─────────────────────────────────────────────────────────────── */
+
+.testimonials-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.testimonials-arrow {
+  background: none;
+  border: 1px solid rgba(26, 26, 26, 0.25);
+  color: #1a1a1a;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.testimonials-arrow:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.testimonials-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonials-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.testimonials-dot.active {
+  background: #d4af37;
+  transform: scale(1.35);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 80px 24px;
+  }
+
+  .testimonials-title {
+    font-size: 1.9rem;
+  }
+
+  .testimonials-card {
+    padding: 48px 32px 40px;
+  }
+
+  .testimonials-quote {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-card {
+    padding: 40px 24px 32px;
+  }
+
+  .testimonials-title {
+    font-size: 1.5rem;
+  }
+}

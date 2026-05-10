@@ -9,6 +9,8 @@ import FeaturedArticle from "../components/FeaturedArticle";
 import TextVideo from "../components/textVideo";
 import FeaturedBlogs from "../components/FeaturedBlogs";
 import HighRiseSlider from "../components/HighRiseSlider";
+import Testimonials from "../components/Testimonials";
+import PressBar from "../components/PressBar";
 import Work from "../components/Work";
 import Newsletter from "../components/Newsletter";
 
@@ -17,6 +19,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Banner />
+      <PressBar />
       {/* <Intro /> */}
       <AgentProfile />
       {/* <Communities /> */}
@@ -25,6 +28,7 @@ export default function Home() {
       <TextSliderModern />
       <TextVideo />
       <FeaturedArticle />
+      <Testimonials />
       <HighRiseSlider />
       <Work />
       {/* <Newsletter /> */}

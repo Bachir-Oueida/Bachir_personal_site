@@ -1,0 +1,129 @@
+.press-bar {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 22px 40px;
+}
+
+.press-bar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* "AS SEEN IN" label */
+.press-bar-label {
+  font-family: "Gill Sans", "Optima", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* thin vertical rule separating label from logos */
+.press-bar-divider-v {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* publication list */
+.press-bar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.press-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.press-bar-name {
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.press-bar-name:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* serif style — The Real Deal, Los Angeles Times */
+.press-bar-name--serif {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+/* sans style — Robb Report, DIGS, Yahoo! Finance */
+.press-bar-name--sans {
+  font-family: "Gill Sans", "Optima", "Helvetica Neue", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* mid-dot separator */
+.press-bar-dot {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+  line-height: 1;
+  margin: 0 20px 0 0;
+  user-select: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .press-bar {
+    padding: 20px 24px;
+  }
+
+  .press-bar-inner {
+    gap: 16px;
+  }
+
+  .press-bar-divider-v {
+    display: none;
+  }
+
+  .press-bar-label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .press-bar-list {
+    gap: 0;
+  }
+
+  .press-bar-dot {
+    margin: 0 10px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .press-bar-name--serif {
+    font-size: 0.82rem;
+  }
+
+  .press-bar-name--sans {
+    font-size: 0.68rem;
+  }
+}

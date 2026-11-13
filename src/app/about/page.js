@@ -41,9 +41,10 @@ export default function AboutPage() {
               <Image
                 src="/images/aboutImage.jpeg"
                 alt="Bachir Oueida"
-                width={500}
-                height={600}
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
                 className="profile-image"
+                priority
               />
             </div>
             <div className="story-text">
@@ -51,16 +52,19 @@ export default function AboutPage() {
               <div className="story-description">
                 <p>Beverly Hills Greater Los Angeles Association of Realtors</p>
                 <p>
-                Bachir Oueida is one of Los Angeles&apos; most trusted and accomplished luxury real estate professionals, with over 30 years of experience representing ultra-high-net-worth buyers, sellers, and investors across Beverly Hills, Bel Air, Holmby Hills, Trousdale Estates, the Bird Streets, Hollywood Hills, Century City, and the broader Westside.
+                Bachir Oueida is one of Los Angeles&apos; most trusted and accomplished luxury real estate professionals, with over 30 years of experience representing high-net-worth and ultra-high-net-worth buyers, sellers, and investors across Beverly Hills, Bel Air, Holmby Hills, Trousdale Estates, the Bird Streets, Hollywood Hills, Century City, and the broader Westside.
                 </p>
                 <p>
-                With a career built on discretion, integrity, and an unmatched command of the Los Angeles luxury market, Bachir consistently handles some of the most significant and high-profile transactions in Southern California, across both grand single-family estates and world-class residential properties at every tier of the market.
+                With a career built on discretion, integrity, and an unmatched command of the Los Angeles luxury market, Bachir consistently handles some of the most significant and high-profile transactions in Southern California, across both grand single-family estates and world-class residential properties at every tier of the market. His expertise in finance, contracts, negotiation, and marketing gives his clients a decisive edge in every transaction.
                 </p>
                 <p>
-                His record-setting sales history, deep-rooted relationships with private wealth clients, celebrities, and international investors, and his global network of brokers and advisors position him among a rare and elite group of agents trusted with Los Angeles&apos; most extraordinary properties, with no ceiling on what he can achieve for his clients.
+                His record-setting sales history, deep-rooted relationships with private wealth clients, celebrities, and international investors, and his global network of brokers and advisors position him among a rare and elite group of agents trusted with Los Angeles&apos; most extraordinary properties, with no ceiling on what he can achieve for his clients. A perennial honoree on Los Angeles Magazine&apos;s prestigious Real Estate All-Stars list, Bachir has been repeatedly recognized by Douglas Elliman at its annual Ellies Awards, most recently in 2026 as the firm&apos;s Top Sale of the Year in the $25M+ category, ranking #3 Agent by Volume and #4 Agent by GCI in California, and earning the prestigious Pinnacle Award, reserved for the top 4% of all Douglas Elliman agents company-wide.
                 </p>
                 <p>
-                Among his many distinctions, Bachir has closed over 100 transactions at The Century, Century City&apos;s most prestigious address, including six of the building&apos;s nine penthouses, a record unmatched by any agent in the building&apos;s history. In 2025, he represented the $39.1 million sale of a full-floor penthouse at The Century, the most expensive condominium sale in Los Angeles County history at the time, and among the most significant condo transactions ever recorded in the state of California. His media presence spans The Real Deal, the Los Angeles Times, Robb Report, DIGS, and Yahoo! Finance, where he is regularly cited as a Westside luxury market authority.
+                Among his many distinctions, Bachir has closed over 100 transactions at The Century, Century City&apos;s most prestigious address, including six of the building&apos;s nine penthouses, a record unmatched by any agent in the building&apos;s history. His transactions at The Century include some of the most celebrated and record-setting sales in Los Angeles real estate history, including a $20 million full-floor penthouse that was Westwood and Century City&apos;s priciest sale of 2017, and a $13.75 million penthouse acquisition in 2026 that stood as the highest condo sale in Los Angeles at the time of closing. In 2025, he represented the sale of a full-floor penthouse at The Century, originally listed at $50 million and sold for $39.1 million, the most expensive condominium sale in Los Angeles County history at the time, and among the most significant condo transactions ever recorded in the state of California, a landmark transaction that garnered coverage in Forbes, The Wall Street Journal, and Robb Report.
+                </p>
+                <p>
+                His media presence spans The Wall Street Journal, Forbes, The Hollywood Reporter, Variety, the Los Angeles Times, Mansion Global, The Real Deal, Robb Report, DIGS, and Yahoo! Finance, where he is regularly cited as a Westside luxury market authority.
                 </p>
                 <p>
                 At the core of his practice is one guiding principle: the client always comes first. Bachir does not measure success through accolades, he measures it through the trust, loyalty, and satisfaction of the people he serves.
@@ -187,55 +191,63 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="specialties-grid">
-            <div className="specialty-item">
+            <article className="specialty-item">
               <Image
                 src="/images/beverly-hills.jpg"
                 alt="Beverly Hills"
-                width={300}
-                height={200}
+                width={640}
+                height={400}
                 className="specialty-image"
               />
-              <h3>Beverly Hills</h3>
-              <p>
-                Luxury estates and iconic properties in the heart of Beverly
-                Hills
-              </p>
-            </div>
-            <div className="specialty-item">
+              <div className="specialty-copy">
+                <h3>Beverly Hills</h3>
+                <p>
+                  Luxury estates and iconic properties in the heart of Beverly
+                  Hills
+                </p>
+              </div>
+            </article>
+            <article className="specialty-item">
               <Image
                 src="/images/malibu.jpg"
                 alt="Malibu"
-                width={300}
-                height={200}
+                width={640}
+                height={400}
                 className="specialty-image"
               />
-              <h3>Malibu</h3>
-              <p>Oceanfront properties and beachside luxury homes</p>
-            </div>
-            <div className="specialty-item">
+              <div className="specialty-copy">
+                <h3>Malibu</h3>
+                <p>Oceanfront properties and beachside luxury homes</p>
+              </div>
+            </article>
+            <article className="specialty-item">
               <Image
                 src="/images/bel-air.jpg"
                 alt="Bel Air"
-                width={300}
-                height={200}
+                width={640}
+                height={400}
                 className="specialty-image"
               />
-              <h3>Bel Air</h3>
-              <p>
-                Exclusive estates in one of LA&apos;s most prestigious neighborhoods
-              </p>
-            </div>
-            <div className="specialty-item">
+              <div className="specialty-copy">
+                <h3>Bel Air</h3>
+                <p>
+                  Exclusive estates in one of LA&apos;s most prestigious neighborhoods
+                </p>
+              </div>
+            </article>
+            <article className="specialty-item">
               <Image
                 src="/images/holmby-hills.jpg"
                 alt="Holmby Hills"
-                width={300}
-                height={200}
+                width={640}
+                height={400}
                 className="specialty-image"
               />
-              <h3>Holmby Hills</h3>
-              <p>Ultra-luxury properties in the platinum triangle</p>
-            </div>
+              <div className="specialty-copy">
+                <h3>Holmby Hills</h3>
+                <p>Ultra-luxury properties in the platinum triangle</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>

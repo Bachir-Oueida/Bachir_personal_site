@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SocialLinks from "./SocialLinks";
 import "../styles/Footer.css";
 
 export default function Footer() {
@@ -11,70 +12,63 @@ export default function Footer() {
           <div className="footer-column">
             <div className="footer-logo">
               <h1>Bachir Oueida</h1>
-              {/* <img src="/images/footerLogo.png" alt="Douglas Elliman" /> */}
             </div>
+            <Image
+              src="/logos/douglas-elliman-white.png"
+              alt="Douglas Elliman"
+              width={1024}
+              height={142}
+              className="footer-brokerage-logo"
+            />
             <div className="footer-company">
               <h3 className="footer-company-name">
                 Douglas Elliman Real Estate
               </h3>
-              <p className="footer-agent-id f-italic">AGENT ID DRE# 00936311</p>
             </div>
           </div>
 
-          {/* Second Column - Footer Image & Text */}
           <div className="footer-column">
-            <div className="footer-map-section mb-10">
-              <h4 className="footer-map-heading">Get Directions</h4>
-              <div className="footer-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.0842742932626!2d-118.39876792335916!3d34.07011917314692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf0bb4a4e4f%3A0x5e5c24a3b6e9f8c9!2s150%20S%20El%20Camino%20Dr%2C%20Beverly%20Hills%2C%20CA%2090212!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                  width="100%"
-                  height="150"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-            <div className="footer-image-section">
-              {/* <Image
-                src="/images/footerImage.png"
-                alt="Luxury Property"
-                className="footer-image"
-                width={400}
-                height={300}
-              /> */}
-              {/* <p className="footer-disclaimer text-center f-italic">
-                While some of the listings on this site may not be our exclusive
-                listings, we have ongoing relationships with all of the listing
-                agents.
-              </p> */}
-            </div>
+            <Image
+              src="/logos/la-real-estate-logo.png"
+              alt="L.A. Real Estate"
+              width={767}
+              height={225}
+              unoptimized
+              className="footer-la-logo"
+            />
           </div>
 
           {/* Third Column - Contact Info */}
           <div className="footer-column">
             <div className="footer-contact">
               <h3 className="footer-contact-heading">Contact Us</h3>
+              <p className="footer-contact-name">Bachir Oueida</p>
+              <p className="footer-contact-company">Douglas Elliman Real Estate</p>
+              <div className="footer-contact-item">
+                <a href="tel:+13107227727" className="footer-phone">
+                  Mobile 310.722.7727
+                </a>
+              </div>
               <div className="footer-contact-item">
                 <a href="mailto:bachir@oueida.com" className="footer-email">
                   bachir@oueida.com
                 </a>
               </div>
-              <div className="footer-contact-item">
-                <a href="tel:310-722-7727" className="footer-phone">
-                  (310)-722-7727
-                </a>
-              </div>
+              <p className="footer-agent-id">DRE #00936311</p>
               <div className="footer-contact-item">
                 <address className="footer-address">
-                  150 S El Camino Dr, Beverly Hills,
-                  <br />
-                  CA 90212
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=150+El+Camino+Drive+Suite+300+Beverly+Hills+CA+90212"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    150 El Camino Drive, Suite 300,
+                    <br />
+                    Beverly Hills, CA 90212
+                  </a>
                 </address>
               </div>
-              
+              <SocialLinks />
             </div>
           </div>
         </div>

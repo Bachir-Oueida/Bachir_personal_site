@@ -61,6 +61,7 @@ export default function Header() {
         { name: 'All Properties', path: '/properties' },
         { name: 'For Sale', path: '/properties/sale' },
         { name: 'For Lease', path: '/properties/lease' },
+        { name: 'Coming Soon', path: '/properties/coming-soon' },
         { name: 'Sold Properties', path: '/properties/sold' }
       ] 
     },
@@ -77,6 +78,16 @@ export default function Header() {
     {
       name: 'Communities',
       path: '/communities',
+      hasDropdown: false
+    },
+    {
+      name: 'Testimonials',
+      path: '/testimonials',
+      hasDropdown: false
+    },
+    {
+      name: 'Simply Abu Dhabi',
+      path: '/simply-abu-dhabi',
       hasDropdown: false
     },
     { 
@@ -112,14 +123,14 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 py-4">
         {/* Desktop Layout */}
-        <div className="hidden md:flex justify-between items-center">
-          <Link href="/" className={`text-3xl font-bold transition-colors ${getTextColor()}`}>
+        <div className="hidden lg:flex justify-between items-center gap-6">
+          <Link href="/" className={`shrink-0 whitespace-nowrap text-2xl font-bold transition-colors xl:text-3xl ${getTextColor()}`}>
             BACHIR OUEIDA
           </Link>
           <nav>
-            <ul className="flex space-x-6">
+            <ul className="flex flex-nowrap items-center gap-x-3 text-[13px] xl:gap-x-5 xl:text-[15px]">
               {navItems.map((item, index) => (
-                <li key={index} className="relative group">
+                <li key={index} className="relative shrink-0 whitespace-nowrap group">
                   {item.hasDropdown ? (
                     <>
                       <button 
@@ -167,7 +178,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden flex justify-between items-center">
+        <div className="lg:hidden flex justify-between items-center">
           {/* Hamburger Menu Button */}
           <button 
             onClick={toggleMobileMenu}
@@ -193,7 +204,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg h-screen">
+          <div className="lg:hidden mt-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg h-screen">
             <nav className="py-4">
               <ul className="space-y-2">
                 {navItems.map((item, index) => (

@@ -73,31 +73,51 @@ export default function PropertyDetail({ property }) {
     setShowImageModal(false);
   };
 
+  const hasImages = property.images && property.images.length > 0;
+  const statusLabels = {
+    sale: "For Sale",
+    sold: "Sold",
+    lease: "For Lease",
+    leased: "Leased",
+    "coming-soon": "Coming Soon",
+  };
+  const amenityList = property.amenities?.length
+    ? property.amenities
+    : property.features;
+
   return (
     <div className="property-detail">
       {/* Property Hero Section */}
       <section className="property-hero">
         <div className="property-gallery">
           <div className="main-image">
-            <Image
-              src={property.images[currentImageIndex]}
-              alt={`${property.title} - Image ${currentImageIndex + 1}`}
-              width={800}
-              height={600}
-              className="gallery-image"
-              onClick={openImageModal}
-              style={{ cursor: 'zoom-in' }}
-            />
-            <button className="gallery-nav prev" onClick={prevImage}>
-              &#8249;
-            </button>
-            <button className="gallery-nav next" onClick={nextImage}>
-              &#8250;
-            </button>
+            {hasImages ? (
+              <Image
+                src={property.images[currentImageIndex]}
+                alt={`${property.title} - Image ${currentImageIndex + 1}`}
+                width={800}
+                height={600}
+                className="gallery-image"
+                onClick={openImageModal}
+                style={{ cursor: 'zoom-in' }}
+              />
+            ) : (
+              <div className="property-image-placeholder detail">Photos coming soon</div>
+            )}
+            {hasImages && property.images.length > 1 && (
+              <>
+                <button className="gallery-nav prev" onClick={prevImage}>
+                  &#8249;
+                </button>
+                <button className="gallery-nav next" onClick={nextImage}>
+                  &#8250;
+                </button>
+              </>
+            )}
           </div>
           
           <div className="thumbnail-grid">
-            {property.images.map((image, index) => (
+            {hasImages && property.images.map((image, index) => (
               <div
                 key={index}
                 className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
@@ -117,29 +137,52 @@ export default function PropertyDetail({ property }) {
 
         <div className="property-info">
           <div className="property-header">
-            <span className="property-status">{property.status}</span>
+            <span className={`property-status ${property.status}`}>
+              {statusLabels[property.status] || property.status}
+            </span>
             <h1>{property.title}</h1>
-            <p className="property-location">{property.location}</p>
-            <div className="property-price">${property.price}</div>
+            {property.address ? (
+              <p className="property-location">{property.address}</p>
+            ) : null}
+            {property.banner ? (
+              <p className="listing-banner detail">{property.banner}</p>
+            ) : property.price ? (
+              <div className="property-price">
+                {property.status === "lease"
+                  ? `$${Number(property.price).toLocaleString()}/month`
+                  : `$${Number(property.price).toLocaleString()}`}
+              </div>
+            ) : null}
+            {property.contactDealer?.name && (
+              <p className="listing-contact">Contact {property.contactDealer.name}</p>
+            )}
           </div>
 
           <div className="property-features">
-            <div className="feature">
-              <span className="feature-icon">🛏️</span>
-              <span>{property.bedrooms} Bedrooms</span>
-            </div>
-            <div className="feature">
-              <span className="feature-icon">🚿</span>
-              <span>{property.bathrooms} Bathrooms</span>
-            </div>
-            <div className="feature">
-              <span className="feature-icon">📐</span>
-              <span>{property.sqft} sq ft</span>
-            </div>
-            <div className="feature">
-              <span className="feature-icon">🚗</span>
-              <span>{property.parking} Parking</span>
-            </div>
+            {property.bedrooms ? (
+              <div className="feature">
+                <span className="feature-icon">🛏️</span>
+                <span>{property.bedrooms} Bedrooms</span>
+              </div>
+            ) : null}
+            {property.bathrooms ? (
+              <div className="feature">
+                <span className="feature-icon">🚿</span>
+                <span>{property.bathrooms} Bathrooms</span>
+              </div>
+            ) : null}
+            {property.area ? (
+              <div className="feature">
+                <span className="feature-icon">📐</span>
+                <span>{Number(property.area).toLocaleString()} sq ft</span>
+              </div>
+            ) : null}
+            {property.parking ? (
+              <div className="feature">
+                <span className="feature-icon">🚗</span>
+                <span>{property.parking} Parking</span>
+              </div>
+            ) : null}
           </div>
 
           <div className="property-actions">
@@ -162,11 +205,11 @@ export default function PropertyDetail({ property }) {
           <h2>Property Description</h2>
           <p>{property.description}</p>
           
-          {property.amenities && property.amenities.length > 0 && (
+          {amenityList && amenityList.length > 0 && (
             <div className="property-amenities">
               <h3>Amenities</h3>
               <ul className="amenities-list">
-                {property.amenities.map((amenity, index) => (
+                {amenityList.map((amenity, index) => (
                   <li key={index}>{amenity}</li>
                 ))}
               </ul>
@@ -176,12 +219,14 @@ export default function PropertyDetail({ property }) {
       </section>
 
       {/* Property Location */}
+      {property.lat && property.lng && (
       <section className="property-location-section">
         <div className="container">
           <h2>Location</h2>
           <PropertyMap lat={property.lat} lng={property.lng} title={property.title} />
         </div>
       </section>
+      )}
 
       {/* Image Modal */}
       {showImageModal && (

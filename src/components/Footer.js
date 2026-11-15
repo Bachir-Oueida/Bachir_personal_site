@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Second Row - Copyright */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2025 Douglas Elliman Real Estate. All rights reserved.
+            © 2026 Douglas Elliman Real Estate. All rights reserved.
           </p>
         </div>
       </div>

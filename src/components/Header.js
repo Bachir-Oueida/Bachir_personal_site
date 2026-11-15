@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -117,6 +118,12 @@ export default function Header() {
     return scrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-200';
   };
 
+  const onHero = isHomepage && !scrolled;
+  const brandNameColor = onHero ? 'text-white' : getTextColor();
+  const logoSrc = onHero ? '/logos/la-real-estate-logo.png' : '/logos/la-real-estate-header.png';
+  const logoWidth = onHero ? 767 : 827;
+  const logoHeight = onHero ? 225 : 232;
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getHeaderStyle()}`}
@@ -124,8 +131,19 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         {/* Desktop Layout */}
         <div className="hidden lg:flex justify-between items-center gap-6">
-          <Link href="/" className={`shrink-0 whitespace-nowrap text-2xl font-bold transition-colors xl:text-3xl ${getTextColor()}`}>
-            BACHIR OUEIDA
+          <Link href="/" className={`flex shrink-0 flex-col items-center leading-none ${onHero ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]' : ''}`}>
+            <Image
+              src={logoSrc}
+              alt="L.A. Real Estate"
+              width={logoWidth}
+              height={logoHeight}
+              priority
+              unoptimized
+              className="h-11 w-auto xl:h-12"
+            />
+            <span className={`mt-1 whitespace-nowrap text-[13px] font-bold tracking-[0.16em] transition-colors xl:text-sm ${brandNameColor}`}>
+              BACHIR OUEIDA
+            </span>
           </Link>
           <nav>
             <ul className="flex flex-nowrap items-center gap-x-3 text-[13px] xl:gap-x-5 xl:text-[15px]">
@@ -178,7 +196,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="lg:hidden flex justify-between items-center">
+        <div className="relative flex items-center justify-between lg:hidden">
           {/* Hamburger Menu Button */}
           <button 
             onClick={toggleMobileMenu}
@@ -193,9 +211,19 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* Centered Logo */}
-          <Link href="/" className={`text-xl font-bold transition-colors absolute left-1/2 transform -translate-x-1/2 ${getTextColor()}`}>
-            BACHIR OUEIDA
+          <Link href="/" className={`flex flex-col items-center leading-none ${onHero ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]' : ''}`}>
+            <Image
+              src={logoSrc}
+              alt="L.A. Real Estate"
+              width={logoWidth}
+              height={logoHeight}
+              priority
+              unoptimized
+              className="h-9 w-auto"
+            />
+            <span className={`mt-0.5 whitespace-nowrap text-[11px] font-bold tracking-[0.14em] transition-colors ${brandNameColor}`}>
+              BACHIR OUEIDA
+            </span>
           </Link>
 
           {/* Placeholder for balance */}

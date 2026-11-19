@@ -13,7 +13,10 @@ export default function PropertyCard({ property }) {
   const formatPrice = (price) => {
     if (!price) return "";
     const formatted = Number(price).toLocaleString();
-    if (property.status === "lease") {
+    const monthly =
+      property.status === "lease" ||
+      (property.status === "leased" && Number(price) > 0 && Number(price) < 100000);
+    if (monthly) {
       return `$${formatted}/month`;
     }
     return `$${formatted}`;

@@ -717,6 +717,22 @@
   background: #b8941f;
 }
 
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-error {
+  margin: 0 0 12px;
+  color: #9b2c2c;
+}
+
+.form-success {
+  margin: 0;
+  color: #1f3d2b;
+  line-height: 1.5;
+}
+
 /* Image Modal Styles */
 .image-modal-overlay {
   position: fixed;

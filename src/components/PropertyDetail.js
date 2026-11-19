@@ -30,6 +30,9 @@ export default function PropertyDetail({ property }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showContactForm, setShowContactForm] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
+  const [contactSending, setContactSending] = useState(false);
+  const [contactSent, setContactSent] = useState(false);
+  const [contactError, setContactError] = useState('');
 
   if (!property) {
     return (
@@ -57,11 +60,40 @@ export default function PropertyDetail({ property }) {
     setCurrentImageIndex(index);
   };
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
-    // Handle contact form submission
-    alert('Thank you for your interest! We will contact you soon.');
+    const data = new FormData(e.currentTarget);
+    setContactSending(true);
+    setContactError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          phone: data.get('phone'),
+          message: data.get('message'),
+          propertyTitle: property.title,
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(result.error || 'The message could not be sent.');
+      }
+      setContactSent(true);
+    } catch (submitError) {
+      setContactError(submitError.message || 'The message could not be sent.');
+    } finally {
+      setContactSending(false);
+    }
+  };
+
+  const closeContactForm = () => {
     setShowContactForm(false);
+    setContactSent(false);
+    setContactError('');
   };
 
   const openImageModal = () => {
@@ -148,7 +180,8 @@ export default function PropertyDetail({ property }) {
               <p className="listing-banner detail">{property.banner}</p>
             ) : property.price ? (
               <div className="property-price">
-                {property.status === "lease"
+                {(property.status === "lease" ||
+                  (property.status === "leased" && Number(property.price) < 100000))
                   ? `$${Number(property.price).toLocaleString()}/month`
                   : `$${Number(property.price).toLocaleString()}`}
               </div>
@@ -288,16 +321,19 @@ export default function PropertyDetail({ property }) {
 
       {/* Contact Form Modal */}
       {showContactForm && (
-        <div className="modal-overlay" onClick={() => setShowContactForm(false)}>
+        <div className="modal-overlay" onClick={closeContactForm}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button 
               className="modal-close"
-              onClick={() => setShowContactForm(false)}
+              onClick={closeContactForm}
             >
               ×
             </button>
             
             <h3>Contact Agent</h3>
+            {contactSent ? (
+              <p className="form-success">Thank you. Your message was sent, and Bachir will be in touch.</p>
+            ) : (
             <form onSubmit={handleContactSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
@@ -325,10 +361,12 @@ export default function PropertyDetail({ property }) {
                 ></textarea>
               </div>
               
-              <button type="submit" className="btn-submit">
-                Send Message
+              {contactError && <p className="form-error">{contactError}</p>}
+              <button type="submit" className="btn-submit" disabled={contactSending}>
+                {contactSending ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+            )}
           </div>
         </div>
       )}

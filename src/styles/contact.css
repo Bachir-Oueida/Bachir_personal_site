@@ -226,6 +226,12 @@
   transform: none;
 }
 
+.form-error {
+  margin: 0 0 16px;
+  color: #9b2c2c;
+  font-size: 0.95rem;
+}
+
 .spinner {
   display: inline-block;
   width: 16px;

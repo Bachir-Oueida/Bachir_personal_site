@@ -1,0 +1,126 @@
+.sad-page {
+  padding: 140px 20px 100px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.sad-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sad-header {
+  margin-bottom: 56px;
+}
+
+.sad-header h1 {
+  font-family: var(--font-playfair-display), serif;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #2c3e50;
+  margin: 0 0 12px;
+}
+
+.sad-header p {
+  font-size: 1.05rem;
+  color: #6b7480;
+  margin: 0;
+}
+
+.sad-list {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.sad-issue,
+.sad-pages {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6e5a28;
+}
+
+.sad-issue-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.sad-issue-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 44px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.sad-issue-title {
+  font-family: var(--font-playfair-display), serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: none;
+  line-height: 1.2;
+  color: #2c3e50;
+  margin: 0 0 28px;
+}
+
+.sad-issue-link {
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sad-issue-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.sad-spread {
+  margin: 0;
+}
+
+.sad-spread-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sad-spread-caption {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .sad-page {
+    padding: 110px 16px 72px;
+  }
+
+  .sad-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .sad-list {
+    gap: 40px;
+  }
+
+  .sad-issue-card {
+    padding: 28px 24px;
+  }
+
+  .sad-issue-title {
+    font-size: 1.6rem;
+  }
+}

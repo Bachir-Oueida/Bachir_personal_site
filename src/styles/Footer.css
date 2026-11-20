@@ -119,6 +119,22 @@
     margin: 0;
 }
 
+.footer-address a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.footer-address a:hover {
+    color: #fff;
+}
+
+.footer-la-logo {
+    width: min(100%, 280px);
+    height: auto;
+    display: block;
+}
+
 /* Second Row - Copyright */
 .footer-bottom {
     border-top: 1px solid #333;
@@ -141,6 +157,12 @@
     font-family: var(--font-raleway), sans-serif;
 }
 
+.footer-brokerage-logo {
+    width: 220px;
+    height: auto;
+    margin: 4px 0 22px;
+}
+
 .footer-contact-heading {
     font-size: 1.2rem;
     font-weight: 600;
@@ -148,6 +170,59 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;
+}
+
+.footer-contact-name,
+.footer-contact-company {
+    margin: 0;
+    color: #fff;
+}
+
+.footer-contact-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.footer-contact-company {
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.profile-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.profile-link {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-link svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.profile-monogram {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+.profile-link:hover {
+    color: #d4af37;
+    border-color: #d4af37;
 }
 
 /* Responsive Design */
@@ -165,6 +240,12 @@
     .footer-column {
         text-align: center;
     }
+
+    .footer-brokerage-logo,
+    .footer-la-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     .footer-company-name {
         font-size: 1.1rem;
@@ -176,6 +257,10 @@
     
     .footer-contact {
         gap: 15px;
+    }
+
+    .profile-links {
+        justify-content: center;
     }
     
     .footer-map-section {

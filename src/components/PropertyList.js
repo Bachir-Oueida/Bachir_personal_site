@@ -74,6 +74,18 @@ export default function PropertyList({ properties, showFilters = false }) {
               >
                 For Lease
               </button>
+              <button 
+                className={activeFilter === 'leased' ? 'active' : ''}
+                onClick={() => handleFilterChange('leased')}
+              >
+                Leased
+              </button>
+              <button 
+                className={activeFilter === 'coming-soon' ? 'active' : ''}
+                onClick={() => handleFilterChange('coming-soon')}
+              >
+                Coming Soon
+              </button>
             </div>
           </div>
 

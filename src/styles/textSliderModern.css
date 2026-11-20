@@ -154,10 +154,13 @@
   z-index: 1;
 }
 
-.status-badge {
+.slide-status-badge {
   position: absolute;
   top: 30px;
   left: 30px;
+  right: auto;
+  width: fit-content;
+  max-width: max-content;
   background: #27ae60;
   color: white;
   padding: 8px 20px;
@@ -165,6 +168,7 @@
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  white-space: nowrap;
   z-index: 2;
 }
 

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ContactPageForm from '@/components/ContactPageForm';
+import SocialLinks from '@/components/SocialLinks';
 import "../../styles/contact.css";
 
 export default function ContactPage() {
@@ -49,55 +50,31 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="contact-info-section">
               <div className="contact-info-card">
+                <Image
+                  src="/logos/douglas-elliman-navy.png"
+                  alt="Douglas Elliman"
+                  width={1024}
+                  height={142}
+                  className="contact-brokerage-logo"
+                />
                 <h3>Contact Information</h3>
                 
-                <div className="contact-methods">
-                  <div className="contact-method">
-                    <div className="method-icon">📞</div>
-                    <div className="method-content">
-                      <h4>Phone</h4>
-                      <p>(310)-722-7727</p>
-                      <span>Available 24/7</span>
-                    </div>
-                  </div>
-
-                  <div className="contact-method">
-                    <div className="method-icon">✉️</div>
-                    <div className="method-content">
-                      <h4>Email</h4>
-                      <p>bachir@oueida.com</p>
-                      <span>Response within 2 hours</span>
-                    </div>
-                  </div>
-
-                  <div className="contact-method">
-                    <div className="method-icon">🏢</div>
-                    <div className="method-content">
-                      <h4>Office</h4>
-                      <p>150 S El Camino Dr<br/>Beverly Hills, CA 90212</p>
-                      <span>By appointment</span>
-                    </div>
-                  </div>
-
-                  <div className="contact-method">
-                    <div className="method-icon">⏰</div>
-                    <div className="method-content">
-                      <h4>Business Hours</h4>
-                      <p>Monday - Friday: 8:00 AM - 8:00 PM<br/>
-                         Saturday: 9:00 AM - 6:00 PM<br/>
-                         Sunday: 10:00 AM - 4:00 PM</p>
-                      <span>Emergency calls accepted anytime</span>
-                    </div>
-                  </div>
+                <div className="contact-details">
+                  <p>Bachir Oueida</p>
+                  <p>Douglas Elliman Real Estate</p>
+                  <p>
+                    <a href="tel:+13107227727">Mobile 310.722.7727</a>
+                  </p>
+                  <p>
+                    <a href="mailto:bachir@oueida.com">bachir@oueida.com</a>
+                  </p>
+                  <p>DRE #00936311</p>
+                  <p>150 El Camino Drive, Suite 300, Beverly Hills, CA 90212</p>
                 </div>
 
                 <div className="social-links">
-                  <h4>Follow Me</h4>
-                  <div className="social-icons">
-                    <a href="#" className="social-link">LinkedIn</a>
-                    <a href="#" className="social-link">Instagram</a>
-                    <a href="#" className="social-link">Facebook</a>
-                  </div>
+                  <h4>Connect</h4>
+                  <SocialLinks />
                 </div>
               </div>
             </div>
@@ -116,6 +93,17 @@ export default function ContactPage() {
                 private and comfortable environment to discuss your real estate 
                 needs. Schedule an appointment to meet in person.
               </p>
+              <p className="office-address">
+                150 El Camino Drive, Suite 300, Beverly Hills, CA 90212
+              </p>
+              <a
+                className="directions-button office-directions"
+                href="https://www.google.com/maps/search/?api=1&query=150+El+Camino+Drive+Suite+300+Beverly+Hills+CA+90212"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions
+              </a>
               
               <div className="office-details">
                 <div className="office-feature">
@@ -149,14 +137,16 @@ export default function ContactPage() {
             </div>
 
             <div className="location-map">
-              <div className="map-placeholder">
-                <div className="map-content">
-                  <div className="map-marker">📍</div>
-                  <h4>Beverly Hills Office</h4>
-                  <p>9454 Wilshire Blvd<br/>Beverly Hills, CA 90212</p>
-                  <button className="directions-button">Get Directions</button>
-                </div>
-              </div>
+              <iframe
+                title="Map of 150 El Camino Drive, Beverly Hills"
+                src="https://maps.google.com/maps?q=150%20El%20Camino%20Drive%2C%20Suite%20300%2C%20Beverly%20Hills%2C%20CA%2090212&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

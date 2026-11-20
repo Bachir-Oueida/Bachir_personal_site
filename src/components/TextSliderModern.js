@@ -134,7 +134,7 @@ export default function TextSliderModern() {
                         priority={index === 0}
                       />
                       <div className="image-overlay"></div>
-                      <div className="status-badge">
+                      <div className="slide-status-badge">
                         {property.status}
                       </div>
                       <div className="price-badge">

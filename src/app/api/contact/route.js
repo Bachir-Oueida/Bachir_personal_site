@@ -96,10 +96,14 @@ export async function POST(request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
-    console.error('Contact form send failed');
+  } catch (error) {
+    console.error('Contact form send failed', error?.code, error?.responseCode, error?.message);
     return NextResponse.json(
-      { error: 'The message could not be sent. Please try again or email bachir@oueida.com.' },
+      {
+        error: 'The message could not be sent. Please try again or email bachir@oueida.com.',
+        code: error?.code || error?.responseCode || 'SMTP_ERROR',
+        detail: String(error?.message || '').slice(0, 300),
+      },
       { status: 500 }
     );
   }

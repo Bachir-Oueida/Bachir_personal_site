@@ -25,13 +25,47 @@ function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function describeEnv(name, value) {
+  const text = String(value ?? '').trim();
+  if (!text) return { name, set: false };
+  const at = text.lastIndexOf('@');
+  return {
+    name,
+    set: true,
+    length: text.length,
+    looksLikeEmail: isEmail(text),
+    domain: at > 0 ? text.slice(at + 1) : null,
+  };
+}
+
 export async function POST(request) {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASSWORD;
   const to = process.env.SMTP_TO || user;
   const from = process.env.SMTP_FROM || user;
 
+  console.log('[contact] env', {
+    vercelEnv: process.env.VERCEL_ENV || 'local',
+    SMTP_USER: describeEnv('SMTP_USER', user),
+    SMTP_PASSWORD: {
+      name: 'SMTP_PASSWORD',
+      set: Boolean(String(pass ?? '').trim()),
+      length: String(pass ?? '').trim().length,
+    },
+    SMTP_TO: describeEnv('SMTP_TO', process.env.SMTP_TO),
+    SMTP_FROM: describeEnv('SMTP_FROM', process.env.SMTP_FROM),
+    toFallsBackToUser: !process.env.SMTP_TO,
+    fromFallsBackToUser: !process.env.SMTP_FROM,
+    userMatchesFrom: String(user ?? '').trim().toLowerCase() === String(from ?? '').trim().toLowerCase(),
+  });
+
   if (!user || !pass || !to || !from) {
+    console.error('[contact] missing SMTP settings', {
+      SMTP_USER: Boolean(user),
+      SMTP_PASSWORD: Boolean(pass),
+      SMTP_TO: Boolean(to),
+      SMTP_FROM: Boolean(from),
+    });
     return NextResponse.json(
       { error: 'The contact form is not set up yet. Please email bachir@oueida.com.' },
       { status: 503 }
@@ -85,6 +119,13 @@ export async function POST(request) {
       port: 465,
       secure: true,
       auth: { user, pass },
+    });
+
+    console.log('[contact] sending', {
+      host: 'smtp.fastmail.com',
+      port: 465,
+      fromDomain: from.slice(from.lastIndexOf('@') + 1),
+      toDomain: to.slice(to.lastIndexOf('@') + 1),
     });
 
     await transporter.sendMail({

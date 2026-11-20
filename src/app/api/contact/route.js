@@ -1,6 +1,9 @@
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
+// Sends contact form messages through Fastmail SMTP (smtp.fastmail.com:465).
+// Reads FASTMAIL_USER, FASTMAIL_APP_PASSWORD, FASTMAIL_TO, and FASTMAIL_FROM.
+
 const SUBJECTS = {
   buying: 'Looking to Buy',
   selling: 'Looking to Sell',
